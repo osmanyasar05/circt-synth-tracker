@@ -84,6 +84,18 @@ jobs:
       - name: Add CIRCT to PATH
         run: echo "$GITHUB_WORKSPACE/circt/bin" >> $GITHUB_PATH
 
+      # The nightly ships its own copy of the CIRCT headers. Those directories
+      # end up on the include path ahead of the fork's, so tablegen reads a
+      # pattern from our source but the op definition from the nightly, and
+      # fails on any op whose signature changed between the two revisions
+      # (e.g. "firrtl.regreset argument number mismatch: 8 vs 9"). Only the
+      # LLVM/MLIR halves of the artifact are needed to build against.
+      - name: Drop CIRCT headers from the nightly artifact
+        run: |
+          BEFORE=$(find "$GITHUB_WORKSPACE/circt" -type d -path '*/include/circt' | wc -l)
+          find "$GITHUB_WORKSPACE/circt" -type d -path '*/include/circt' -prune -exec rm -rf {} +
+          echo "Removed $BEFORE stale CIRCT header dir(s) from the nightly."
+
       - name: Setup sccache
         uses: mozilla-actions/sccache-action@v0.0.9
 
