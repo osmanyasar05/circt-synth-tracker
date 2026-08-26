@@ -48,7 +48,9 @@ on:
         default: true
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: verified-datapath-${{ github.ref }}
@@ -252,13 +254,32 @@ jobs:
         if: ${{ success() && (inputs.publish || github.event_name == 'schedule') }}
         run: |
           mkdir -p deploy
-          cp report.html deploy/verified-datapath.html
+          cp report.html deploy/index.html
           cp report.json deploy/verified-datapath.json
+          cp summary_datapath.json summary_verified.json deploy/
+          [ -f cec.json ] && cp cec.json deploy/ || true
 
-      - name: Publish to GitHub Pages
+      - name: Configure Pages
         if: ${{ success() && (inputs.publish || github.event_name == 'schedule') }}
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        if: ${{ success() && (inputs.publish || github.event_name == 'schedule') }}
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./deploy
-          keep_files: true
+          path: ./deploy
+
+  # Pages deployment runs as its own job, which is what the "GitHub Actions"
+  # Pages source expects.
+  deploy:
+    name: Publish report
+    needs: compare
+    if: ${{ inputs.publish || github.event_name == 'schedule' }}
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
