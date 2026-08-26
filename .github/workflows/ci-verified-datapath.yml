@@ -27,11 +27,11 @@ on:
       lean_repository:
         description: 'Repository providing datapath-cli'
         required: false
-        default: 'osmanyasar05/datapath-verification'
+        default: 'opencompl/datapath-verification'
       lean_ref:
         description: 'Ref of the Lean repo to build when no release is given'
         required: false
-        default: 'main'
+        default: 'circt_connection'
       bitwidths:
         description: 'Comma-separated operand widths'
         required: false
@@ -140,17 +140,39 @@ jobs:
           chmod +x "$GITHUB_WORKSPACE/lean-bin/datapath-cli"
           echo "DATAPATH_CLI=$GITHUB_WORKSPACE/lean-bin/datapath-cli" >> $GITHUB_ENV
 
+      # Cache the whole .lake tree, keyed on the toolchain plus the manifest.
+      # A hit makes this step nearly instant; a miss still only downloads
+      # Mathlib's prebuilt olean cache rather than compiling it.
+      - name: Restore Lean build cache
+        if: ${{ inputs.lean_release == '' }}
+        uses: actions/cache@v4
+        with:
+          path: |
+            lean-src/.lake
+            ~/.elan
+          key: lean-${{ runner.os }}-${{ inputs.lean_ref || 'circt_connection' }}-${{ github.run_id }}
+          restore-keys: |
+            lean-${{ runner.os }}-${{ inputs.lean_ref || 'circt_connection' }}-
+            lean-${{ runner.os }}-
+
       - name: Build datapath-cli from source
         if: ${{ inputs.lean_release == '' }}
         run: |
-          git clone --depth=1 \
-            --branch "${{ inputs.lean_ref || 'main' }}" \
-            "https://github.com/${{ inputs.lean_repository || 'osmanyasar05/datapath-verification' }}.git" \
-            lean-src
+          if [ ! -d lean-src ]; then
+            git clone --depth=1 \
+              --branch "${{ inputs.lean_ref || 'circt_connection' }}" \
+              "https://github.com/${{ inputs.lean_repository || 'opencompl/datapath-verification' }}.git" \
+              lean-src
+          fi
           cd lean-src
-          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
-            | sh -s -- -y --default-toolchain none
+          if [ ! -x "$HOME/.elan/bin/lake" ]; then
+            curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+              | sh -s -- -y --default-toolchain none
+          fi
           export PATH="$HOME/.elan/bin:$PATH"
+          # Mathlib is by far the bulk of the build. Its prebuilt oleans turn a
+          # multi-hour compile into a download, so fetch them before building.
+          lake exe cache get || echo "::warning::Mathlib cache unavailable; falling back to a full build"
           lake build datapath-cli
           BIN=$(find .lake/build/bin -name 'datapath-cli' -type f | head -1)
           if [ -z "$BIN" ]; then
