@@ -1,0 +1,242 @@
+name: Verified Datapath
+
+# Compares the Lean-verified compressor-tree lowering against CIRCT's own
+# Datapath dialect on the combinational benchmarks.
+#
+# Both arms run on the SAME circt-synth binary, built from a CIRCT fork that
+# carries the --verified-datapath flag, so the only difference between them is
+# the lowering strategy.
+
+on:
+  schedule:
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+    inputs:
+      circt_repository:
+        description: 'CIRCT repository carrying the --verified-datapath flag'
+        required: false
+        default: 'cowardsa/circt'
+      circt_ref:
+        description: 'Branch, tag or SHA to build'
+        required: false
+        default: 'verified-datapath-zext'
+      lean_release:
+        description: 'Release tag in the Lean repo holding a prebuilt datapath-cli. Leave empty to build it from source.'
+        required: false
+        default: ''
+      lean_repository:
+        description: 'Repository providing datapath-cli'
+        required: false
+        default: 'osmanyasar05/datapath-verification'
+      lean_ref:
+        description: 'Ref of the Lean repo to build when no release is given'
+        required: false
+        default: 'main'
+      bitwidths:
+        description: 'Comma-separated operand widths'
+        required: false
+        default: '8,16,32'
+      equiv_check:
+        description: 'Run combinational equivalence checking between the two arms'
+        required: false
+        type: boolean
+        default: true
+      publish:
+        description: 'Publish the report to GitHub Pages'
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: verified-datapath-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compare:
+    name: Verified vs Datapath dialect
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout tracker
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install native runner packages
+        uses: ./.github/actions/setup-ubuntu-ci-tools
+
+      # The prebuilt nightly supplies LLVM/MLIR CMake config plus the tools we
+      # do not build ourselves (circt-verilog, circt-translate, circt-lec).
+      - name: Install CIRCT nightly
+        uses: circt/install-circt@3f8dda6e1c1965537b5801a43c81c287bac4eae4 # v1.1.1
+        with:
+          version: 'nightly'
+          github-token: ${{ github.token }}
+
+      - name: Add CIRCT to PATH
+        run: echo "$GITHUB_WORKSPACE/circt/bin" >> $GITHUB_PATH
+
+      - name: Setup sccache
+        uses: mozilla-actions/sccache-action@v0.0.9
+
+      - name: Locate LLVM and MLIR CMake directories
+        run: |
+          MLIR_DIR=$(find "$GITHUB_WORKSPACE/circt" -name 'MLIRConfig.cmake' -printf '%h\n' | head -1)
+          LLVM_DIR=$(find "$GITHUB_WORKSPACE/circt" -name 'LLVMConfig.cmake' -printf '%h\n' | head -1)
+          if [ -z "$MLIR_DIR" ] || [ -z "$LLVM_DIR" ]; then
+            echo "::error::Could not locate LLVM/MLIR CMake config in the nightly artifact"
+            exit 1
+          fi
+          echo "MLIR_DIR=$MLIR_DIR" >> $GITHUB_ENV
+          echo "LLVM_DIR=$LLVM_DIR" >> $GITHUB_ENV
+
+      - name: Build circt-synth from the verified-datapath fork
+        uses: ./.github/actions/build-circt-at-sha
+        with:
+          repository: ${{ inputs.circt_repository || 'cowardsa/circt' }}
+          ref: ${{ inputs.circt_ref || 'verified-datapath-zext' }}
+          targets: 'circt-synth'
+          checkout_path: circt-src
+          build_path: circt-build
+          mlir_dir: ${{ env.MLIR_DIR }}
+          llvm_dir: ${{ env.LLVM_DIR }}
+
+      # Use the freshly built circt-synth, but keep the nightly's other tools.
+      - name: Select the built circt-synth
+        run: |
+          SYNTH="$GITHUB_WORKSPACE/circt-build/bin/circt-synth"
+          if [ ! -x "$SYNTH" ]; then
+            echo "::error::circt-synth was not built at $SYNTH"
+            exit 1
+          fi
+          echo "CIRCT_SYNTH=$SYNTH" >> $GITHUB_ENV
+          echo "CIRCT_VERSION=$("$SYNTH" --version | tail -1 | xargs)" >> $GITHUB_ENV
+
+      - name: Verify the fork exposes --verified-datapath
+        run: |
+          if ! "$CIRCT_SYNTH" --help 2>&1 | grep -q -- '--verified-datapath'; then
+            echo "::error::This circt-synth has no --verified-datapath flag."
+            echo "Point circt_repository/circt_ref at a branch that carries it."
+            exit 1
+          fi
+          echo "Flag present."
+
+      - name: Fetch prebuilt datapath-cli
+        if: ${{ inputs.lean_release != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/lean-bin"
+          gh release download "${{ inputs.lean_release }}" \
+            --repo "${{ inputs.lean_repository }}" \
+            --pattern 'datapath-cli' \
+            --dir "$GITHUB_WORKSPACE/lean-bin"
+          chmod +x "$GITHUB_WORKSPACE/lean-bin/datapath-cli"
+          echo "DATAPATH_CLI=$GITHUB_WORKSPACE/lean-bin/datapath-cli" >> $GITHUB_ENV
+
+      - name: Build datapath-cli from source
+        if: ${{ inputs.lean_release == '' }}
+        run: |
+          git clone --depth=1 \
+            --branch "${{ inputs.lean_ref || 'main' }}" \
+            "https://github.com/${{ inputs.lean_repository || 'osmanyasar05/datapath-verification' }}.git" \
+            lean-src
+          cd lean-src
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain none
+          export PATH="$HOME/.elan/bin:$PATH"
+          lake build datapath-cli
+          BIN=$(find .lake/build/bin -name 'datapath-cli' -type f | head -1)
+          if [ -z "$BIN" ]; then
+            echo "::error::lake build did not produce datapath-cli"
+            exit 1
+          fi
+          echo "DATAPATH_CLI=$PWD/$BIN" >> $GITHUB_ENV
+
+      - name: Check datapath-cli runs
+        run: |
+          "$DATAPATH_CLI" mul 4 4 4 | head -1
+          echo "datapath-cli responds."
+
+      - name: Setup tracker
+        uses: ./.github/actions/setup-tracker
+
+      - name: Run the Datapath dialect arm
+        uses: ./.github/actions/run-benchmark
+        with:
+          synth_tool: circt
+          bitwidths: ${{ inputs.bitwidths || '8,16,32' }}
+          output_dir: build_datapath
+          tool_label: 'datapath-dialect'
+          tool_version: ${{ env.CIRCT_VERSION }}
+          summary_file: summary_datapath.json
+
+      - name: Run the verified arm
+        uses: ./.github/actions/run-benchmark
+        with:
+          synth_tool: circt
+          bitwidths: ${{ inputs.bitwidths || '8,16,32' }}
+          circt_synth_extra_args: --verified-datapath --verified-datapath-lean-exe=${{ env.DATAPATH_CLI }}
+          output_dir: build_verified
+          tool_label: 'verified-lean'
+          tool_version: ${{ env.CIRCT_VERSION }}
+          summary_file: summary_verified.json
+
+      - name: Compare the two arms
+        run: |
+          source .venv/bin/activate
+          EQUIV_FLAG=""
+          [ "${{ inputs.equiv_check || 'true' }}" = "true" ] && EQUIV_FLAG="--equiv-check"
+          compare-results summary_datapath.json summary_verified.json -o report.html $EQUIV_FLAG
+          compare-results summary_datapath.json summary_verified.json -o report.md $EQUIV_FLAG
+          compare-results summary_datapath.json summary_verified.json -o report.json --format json
+
+      - name: Post summary
+        if: always()
+        run: |
+          {
+            echo "## Verified datapath vs CIRCT Datapath dialect"
+            echo ""
+            echo "| | Baseline | Verified |"
+            echo "|---|---|---|"
+            echo "| Lowering | Datapath dialect | Lean compressor trees |"
+            echo "| circt-synth args | _(default)_ | \`--verified-datapath\` |"
+            echo "| CIRCT | \`${CIRCT_VERSION}\` | \`${CIRCT_VERSION}\` |"
+            echo "| Widths | \`${{ inputs.bitwidths || '8,16,32' }}\` | |"
+            echo ""
+            [ -f report.md ] && cat report.md
+          } >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verified-datapath-results
+          retention-days: 30
+          path: |
+            report.html
+            report.md
+            report.json
+            summary_datapath.json
+            summary_verified.json
+
+      - name: Assemble the site
+        if: ${{ success() && (inputs.publish || github.event_name == 'schedule') }}
+        run: |
+          mkdir -p deploy
+          cp report.html deploy/verified-datapath.html
+          cp report.json deploy/verified-datapath.json
+
+      - name: Publish to GitHub Pages
+        if: ${{ success() && (inputs.publish || github.event_name == 'schedule') }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
+          keep_files: true

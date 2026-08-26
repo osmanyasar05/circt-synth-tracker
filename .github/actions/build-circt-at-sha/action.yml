@@ -1,10 +1,22 @@
 name: Build CIRCT At SHA
-description: Checkout llvm/circt at a specific ref and build circt-synth with shared CI settings
+description: Checkout a CIRCT repository at a specific ref and build with shared CI settings
 
 inputs:
+  repository:
+    description: 'Repository to checkout CIRCT from. Point this at a fork to benchmark work that is not yet upstream.'
+    required: false
+    default: 'llvm/circt'
   ref:
-    description: 'Git ref (SHA/branch/tag) to checkout from llvm/circt'
+    description: 'Git ref (SHA/branch/tag) to checkout from the repository'
     required: true
+  targets:
+    description: 'Space-separated ninja targets. Add circt-verilog/circt-translate when the prebuilt artifact does not supply them.'
+    required: false
+    default: 'circt-synth'
+  enable_slang:
+    description: 'Build the slang Verilog frontend, which circt-verilog requires. Off by default because it is slow.'
+    required: false
+    default: 'false'
   checkout_path:
     description: 'Path to checkout CIRCT into'
     required: true
@@ -36,7 +48,7 @@ runs:
     - name: Checkout CIRCT
       uses: actions/checkout@v4
       with:
-        repository: llvm/circt
+        repository: ${{ inputs.repository }}
         ref: ${{ inputs.ref }}
         submodules: false
         path: ${{ inputs.checkout_path }}
@@ -91,9 +103,14 @@ runs:
         git add -A
         git commit -m "Apply PR patch for benchmark build"
 
-    - name: Configure and build circt-synth
+    - name: Configure and build CIRCT
       shell: bash
       run: |
+        if [ "${{ inputs.enable_slang }}" = "true" ]; then
+          SLANG=ON
+        else
+          SLANG=OFF
+        fi
         cmake -GNinja "${{ inputs.checkout_path }}" \
           -B "${{ inputs.build_path }}" \
           -DCMAKE_BUILD_TYPE=Release \
@@ -104,10 +121,11 @@ runs:
           -DCMAKE_C_COMPILER=clang \
           -DCMAKE_CXX_COMPILER=clang++ \
           -DCIRCT_ENABLE_BINDINGS_PYTHON=OFF \
-          -DCIRCT_SLANG_FRONTEND_ENABLED=OFF \
+          -DCIRCT_SLANG_FRONTEND_ENABLED=$SLANG \
           -DCIRCT_CADICAL_ENABLED=ON \
           -DBUILD_SHARED_LIBS=ON \
           -DLLVM_LINK_LLVM_DYLIB=OFF \
           -DCMAKE_C_COMPILER_LAUNCHER=sccache \
           -DCMAKE_CXX_COMPILER_LAUNCHER=sccache
-        ninja -C "${{ inputs.build_path }}" -j"$(nproc)" circt-synth
+        echo "Building targets: ${{ inputs.targets }}"
+        ninja -C "${{ inputs.build_path }}" -j"$(nproc)" ${{ inputs.targets }}
