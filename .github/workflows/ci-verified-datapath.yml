@@ -180,13 +180,25 @@ jobs:
           fi
           cd lean-src
           if [ ! -x "$HOME/.elan/bin/lake" ]; then
+            # Install the toolchain this project pins. Using --default-toolchain
+            # none leaves elan with nothing to run and every lake call fails with
+            # "no default toolchain configured"; the repo's lean-toolchain file
+            # names the version we actually want.
             curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
-              | sh -s -- -y --default-toolchain none
+              | sh -s -- -y --default-toolchain "$(cat lean-toolchain)"
           fi
           export PATH="$HOME/.elan/bin:$PATH"
+          # A restored cache can carry ~/.elan without a default set.
+          elan default "$(cat lean-toolchain)"
+          elan show
           # Mathlib is by far the bulk of the build. Its prebuilt oleans turn a
-          # multi-hour compile into a download, so fetch them before building.
-          lake exe cache get || echo "::warning::Mathlib cache unavailable; falling back to a full build"
+          # multi-hour compile into a download, so treat a cache miss as fatal
+          # rather than silently starting a build that will hit the job limit.
+          if ! lake exe cache get; then
+            echo "::error::Could not fetch Mathlib's prebuilt cache. Building it"
+            echo "from source takes hours and will exceed the job timeout."
+            exit 1
+          fi
           lake build datapath-cli
           BIN=$(find .lake/build/bin -name 'datapath-cli' -type f | head -1)
           if [ -z "$BIN" ]; then
