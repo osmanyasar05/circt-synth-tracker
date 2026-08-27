@@ -18048,7 +18048,7 @@
   },
   {
     "date": "2026-08-27",
-    "circt_version": "CIRCT firtool-1.157.0-9-gcc142fe2e",
+    "circt_version": "CIRCT firtool-1.157.0-10-g2b809f9a3",
     "yosys_version": "Yosys 0.68+132 (git sha1 13b43f8c8-dirty, Release, Clang /usr/bin/clang++ 21.1.8)",
     "circt": {
       "benchmarks": {
@@ -18070,7 +18070,7 @@
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpfd2o9ygfbarrel_shifter.mlir",
+              "from": "tmpc6qe2hn6barrel_shifter.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -18141,7 +18141,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmptzl0iy24.synth.mlir",
+              "to": "tmp88tpe8xx.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -18164,7 +18164,7 @@
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmp2amfonpladd.mlir",
+              "from": "tmpb0h9f7duadd.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -18225,7 +18225,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmpusze8ybe.synth.mlir",
+              "to": "tmpxkcct75g.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -18248,7 +18248,7 @@
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpgub1j9s4parity.mlir",
+              "from": "tmpb1vn4z3mparity.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -18274,7 +18274,7 @@
             },
             {
               "from": "0_4_synth-structural-hash.mlir",
-              "to": "tmp2waqf2el.synth.mlir",
+              "to": "tmpfqowyvgr.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -18297,7 +18297,7 @@
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpo20t44aualu.mlir",
+              "from": "tmpgqti77fjalu.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "error"
             },
@@ -18383,7 +18383,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmp_53dherj.synth.mlir",
+              "to": "tmpi7pl6al_.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -18406,7 +18406,7 @@
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmppumo3c7gmux.mlir",
+              "from": "tmpsng2yp0jmux.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "error"
             },
@@ -18447,7 +18447,7 @@
             },
             {
               "from": "0_7_synth-structural-hash.mlir",
-              "to": "tmppgr90yq6.synth.mlir",
+              "to": "tmp6wfu86gq.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -18470,7 +18470,7 @@
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmpslao6ew4comparator.mlir",
+              "from": "tmpv0z3y5occomparator.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -18526,7 +18526,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmp50e7glmj.synth.mlir",
+              "to": "tmplolz1muh.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -18549,7 +18549,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpktncc7osmul.mlir",
+              "from": "tmp3_qjakuumul.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -18660,7 +18660,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpsdyabrdb.synth.mlir",
+              "to": "tmp8pdats4r.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -18683,7 +18683,7 @@
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmps28dctdticmp.mlir",
+              "from": "tmpmy_1kcvqicmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -18744,7 +18744,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmp_tnmhdwg.synth.mlir",
+              "to": "tmpday4mfyz.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -18767,7 +18767,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpb5e4iyjosub.mlir",
+              "from": "tmp1jtqf7y0sub.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -18848,7 +18848,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpke2dnpne.synth.mlir",
+              "to": "tmpwfgdvayk.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -18871,7 +18871,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp9599te7osub.mlir",
+              "from": "tmpy654t2issub.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -18952,7 +18952,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpuysy6hd8.synth.mlir",
+              "to": "tmp2y47idrx.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -18975,7 +18975,7 @@
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmpqb7dd3a4mux.mlir",
+              "from": "tmpb_yi1_dlmux.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "error"
             },
@@ -19016,7 +19016,7 @@
             },
             {
               "from": "0_7_synth-structural-hash.mlir",
-              "to": "tmpfq4lc7h3.synth.mlir",
+              "to": "tmpnprz7njw.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -19039,7 +19039,7 @@
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpx8xsmyh8alu.mlir",
+              "from": "tmp30vdc5tcalu.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "error"
             },
@@ -19125,7 +19125,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpd0bpxmo7.synth.mlir",
+              "to": "tmpxdern06g.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -19148,7 +19148,7 @@
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmpf65hkp7jicmp.mlir",
+              "from": "tmpv7ea1_ppicmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -19209,7 +19209,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmph9gznhue.synth.mlir",
+              "to": "tmpos18nq2n.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -19232,7 +19232,7 @@
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmpahp805evcomparator.mlir",
+              "from": "tmpjba1ao5qcomparator.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -19288,7 +19288,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmpzj44o38d.synth.mlir",
+              "to": "tmp55j19636.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -19311,7 +19311,7 @@
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpdm9e1lfabarrel_shifter.mlir",
+              "from": "tmp3g65mp1ebarrel_shifter.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -19362,7 +19362,7 @@
             },
             {
               "from": "0_9_canonicalize.mlir",
-              "to": "tmpdjg1nafq.synth.mlir",
+              "to": "tmp9_ygby49.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -19385,7 +19385,7 @@
           "tv_verified": 5,
           "tv_results": [
             {
-              "from": "tmp2cfk74kiparity.mlir",
+              "from": "tmpq7ch21wpparity.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -19406,7 +19406,7 @@
             },
             {
               "from": "0_3_canonicalize.mlir",
-              "to": "tmp856jal4h.synth.mlir",
+              "to": "tmpu5cq_yau.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -19429,7 +19429,7 @@
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmpdvj6t2pkadd.mlir",
+              "from": "tmp7zpvatbtadd.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -19490,7 +19490,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmp_8796k_m.synth.mlir",
+              "to": "tmpdslfvol7.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -19513,7 +19513,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpabk_988smul.mlir",
+              "from": "tmp7uer1wobmul.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -19614,7 +19614,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmpi5q5ve61.synth.mlir",
+              "to": "tmpw6_ms_8v.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -19637,7 +19637,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp3jm1t3f2MulAddSgn.mlir",
+              "from": "tmpozi8wal3MulAddSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -19748,7 +19748,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp3_n2cc62.synth.mlir",
+              "to": "tmpz9f1s_89.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -19771,7 +19771,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpz24pvqb7AddMulSgn.mlir",
+              "from": "tmpy8sx8zcjAddMulSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -19882,7 +19882,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpxbi2egsv.synth.mlir",
+              "to": "tmpjrbddhdt.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -19905,7 +19905,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpg2f556gbDotProductSgn.mlir",
+              "from": "tmpnqes26vjDotProductSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -20016,7 +20016,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp3p260k5b.synth.mlir",
+              "to": "tmpoid69w__.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -20039,7 +20039,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmphq5tu2c0AddMulUns.mlir",
+              "from": "tmpt_5mxkzaAddMulUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -20150,7 +20150,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpda1vzbtt.synth.mlir",
+              "to": "tmp3ojbg5hg.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -20173,7 +20173,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp84ee_6d0Fmaa.mlir",
+              "from": "tmpyvq8wnexFmaa.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -20284,7 +20284,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp0qz22p15.synth.mlir",
+              "to": "tmpi_9jyyoj.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -20307,7 +20307,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpwify6yb9FmaSgn.mlir",
+              "from": "tmps9iigdr3FmaSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -20418,7 +20418,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpchulfpyz.synth.mlir",
+              "to": "tmpr2pnokmo.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -20441,7 +20441,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmp4nmlgkguSqrSgn.mlir",
+              "from": "tmp00aj869wSqrSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -20557,7 +20557,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmp9v1tvlan.synth.mlir",
+              "to": "tmp0_ak6jhh.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -20580,7 +20580,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpyhhmg2e_FmaaSgn.mlir",
+              "from": "tmppkgbj20uFmaaSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -20691,7 +20691,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpc8e5ue6y.synth.mlir",
+              "to": "tmp87711fe0.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -20714,7 +20714,7 @@
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpdlq3qc6bAddThree.mlir",
+              "from": "tmp799feqh0AddThree.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -20785,7 +20785,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpxrjl16e2.synth.mlir",
+              "to": "tmpwv1h57qz.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -20808,7 +20808,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpyjghi0uvDotProduct.mlir",
+              "from": "tmpxbkj2_5pDotProduct.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -20919,7 +20919,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpoytx3xzv.synth.mlir",
+              "to": "tmp8jwe2vm7.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -20942,7 +20942,7 @@
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpc1uylp8oCarrySaveSelect.mlir",
+              "from": "tmpand7j3pjCarrySaveSelect.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -21053,7 +21053,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp2dnz1i61.synth.mlir",
+              "to": "tmp5cutd417.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -21076,7 +21076,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpbnyyyabzFmaShareSgn.mlir",
+              "from": "tmp6b_ufrn6FmaShareSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -21187,7 +21187,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmphbka0l0n.synth.mlir",
+              "to": "tmptibvul_u.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -21210,7 +21210,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp3wirqak5AddThreeSgn.mlir",
+              "from": "tmpqc2nd7jyAddThreeSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -21286,7 +21286,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpf4d5xcyl.synth.mlir",
+              "to": "tmpr0ohy728.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -21309,7 +21309,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmph3ofpd98MulThreeSgn.mlir",
+              "from": "tmp9d_rw4xcMulThreeSgn.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -21425,7 +21425,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmpej454mu1.synth.mlir",
+              "to": "tmpgutn8drz.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -21448,7 +21448,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpz205nj4cMulThree.mlir",
+              "from": "tmpx_lbxtdpMulThree.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -21564,7 +21564,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmp3r3ytftk.synth.mlir",
+              "to": "tmp5bph6x30.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -21587,7 +21587,7 @@
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmpwxp719qtAlphaBlend.mlir",
+              "from": "tmpatsgt3jiAlphaBlend.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -21698,7 +21698,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpa1vn0518.synth.mlir",
+              "to": "tmpd9zbhvzv.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -21721,7 +21721,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpf15pi_o3SqrUns.mlir",
+              "from": "tmpmb1t6fnpSqrUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -21807,7 +21807,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpo6ekp_ta.synth.mlir",
+              "to": "tmphj5zpqd0.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -21830,7 +21830,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpbap0xp2tCarrySaveCompare.mlir",
+              "from": "tmp4a8kkvxvCarrySaveCompare.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -21941,7 +21941,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpf4vupf75.synth.mlir",
+              "to": "tmp_56uxzbh.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -21964,7 +21964,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp_4xyjrghFma.mlir",
+              "from": "tmpny8onlnjFma.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -22075,7 +22075,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpr945n4l3.synth.mlir",
+              "to": "tmp66ap7g54.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -22098,7 +22098,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp5pf5ey6xMulAddUns.mlir",
+              "from": "tmpe3t8jcgzMulAddUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -22209,7 +22209,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmptd49qr97.synth.mlir",
+              "to": "tmp5x1osx7l.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -22232,7 +22232,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmph00f01d8AddMop.mlir",
+              "from": "tmpqkqyadfkAddMop.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -22308,7 +22308,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmp7jzn3h9f.synth.mlir",
+              "to": "tmpeho7txli.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -22331,7 +22331,7 @@
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpgkn08udwFmaShare.mlir",
+              "from": "tmpjz5zape9FmaShare.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -22447,7 +22447,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmp44atplvw.synth.mlir",
+              "to": "tmpimi7eio1.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -22470,7 +22470,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpp3kbdlmvFmaa.mlir",
+              "from": "tmpggakug0lFmaa.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -22576,7 +22576,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpy9tz6cre.synth.mlir",
+              "to": "tmppof8jtkr.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -22599,7 +22599,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpukjwc8j7MulAddUns.mlir",
+              "from": "tmpt2sqbmguMulAddUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -22705,7 +22705,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp007oyg_o.synth.mlir",
+              "to": "tmpzyc8b3b4.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -22728,7 +22728,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpz8py9ngaCarrySaveSelect.mlir",
+              "from": "tmpacnsxis5CarrySaveSelect.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -22834,7 +22834,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp5ifnksql.synth.mlir",
+              "to": "tmpus850wz7.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -22857,7 +22857,7 @@
           "tv_verified": 21,
           "tv_results": [
             {
-              "from": "tmpllktc2pmMulThreeSgn.mlir",
+              "from": "tmp22w3rwr_MulThreeSgn.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -22973,7 +22973,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmpun7z7o40.synth.mlir",
+              "to": "tmptsrre42j.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -22996,7 +22996,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpog1kv7_cAddThreeSgn.mlir",
+              "from": "tmpki3bpd7rAddThreeSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -23072,7 +23072,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpuen6z4_7.synth.mlir",
+              "to": "tmpvhr76f3c.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -23095,7 +23095,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpfgs0rw1xAddMop.mlir",
+              "from": "tmp4i46gsopAddMop.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -23171,7 +23171,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpauzfiasd.synth.mlir",
+              "to": "tmp34hmp6f_.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -23191,10 +23191,10 @@
           "category": "DatapathBench",
           "tv_status": "error",
           "tv_total": 18,
-          "tv_verified": 16,
+          "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp0ycm_4nbSqrUns.mlir",
+              "from": "tmpeuc14ph5SqrUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -23206,7 +23206,7 @@
             {
               "from": "0_1_canonicalize.mlir",
               "to": "0_2_convert-datapath-to-comb.mlir",
-              "status": "timeout"
+              "status": "equiv"
             },
             {
               "from": "0_2_convert-datapath-to-comb.mlir",
@@ -23280,7 +23280,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmprii48ta_.synth.mlir",
+              "to": "tmp0nnv0wfy.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -23303,7 +23303,7 @@
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpr9qpjemsAddMulSgn.mlir",
+              "from": "tmp4f4yy3ipAddMulSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -23414,7 +23414,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpc737l0ft.synth.mlir",
+              "to": "tmpxqu1bhfl.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -23437,7 +23437,7 @@
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmp2ahqqc6bCarrySaveCompare.mlir",
+              "from": "tmpvmzpzk_rCarrySaveCompare.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -23538,7 +23538,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmp9kziva6h.synth.mlir",
+              "to": "tmp7zx_pz84.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -23561,7 +23561,7 @@
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpk735dps_AddThree.mlir",
+              "from": "tmprkjocpl3AddThree.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -23632,7 +23632,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpggt8l883.synth.mlir",
+              "to": "tmpo5plo0ne.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -23655,7 +23655,7 @@
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpecidx823MulAddSgn.mlir",
+              "from": "tmpfi6i3uk1MulAddSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -23761,7 +23761,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp7ihl1mc7.synth.mlir",
+              "to": "tmpl_2du1co.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -23784,7 +23784,7 @@
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpf1weti0yDotProduct.mlir",
+              "from": "tmpekhqtl_nDotProduct.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -23890,7 +23890,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp7v79blln.synth.mlir",
+              "to": "tmp77eccx25.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -23913,7 +23913,7 @@
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpmgx6e4hcFmaaSgn.mlir",
+              "from": "tmpknm3if14FmaaSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -24019,7 +24019,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp4giwnv__.synth.mlir",
+              "to": "tmpkgg3zi6m.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -24042,7 +24042,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmp3hkmqx0kAddMulUns.mlir",
+              "from": "tmps9obrckzAddMulUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -24153,7 +24153,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpvy5i2pq8.synth.mlir",
+              "to": "tmp4brxoy4b.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -24176,7 +24176,7 @@
           "tv_verified": 22,
           "tv_results": [
             {
-              "from": "tmp6c8rg5czSqrSgn.mlir",
+              "from": "tmpjj859rcnSqrSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -24292,7 +24292,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmpoasujfa7.synth.mlir",
+              "to": "tmp0nquj5hy.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -24315,7 +24315,7 @@
           "tv_verified": 21,
           "tv_results": [
             {
-              "from": "tmpvw4g6u8wMulThree.mlir",
+              "from": "tmpbecah288MulThree.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -24431,7 +24431,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmpelh__42x.synth.mlir",
+              "to": "tmpanlo4mem.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -24454,7 +24454,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpkv6udpjwAlphaBlend.mlir",
+              "from": "tmpvpduphsbAlphaBlend.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -24560,7 +24560,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpt10w5w4a.synth.mlir",
+              "to": "tmp47bgwmcg.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -24583,7 +24583,7 @@
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpe29v3k8vFma.mlir",
+              "from": "tmplwb2owy7Fma.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -24684,7 +24684,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmpyvxfu8vt.synth.mlir",
+              "to": "tmp3319a_02.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -24707,7 +24707,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp3j5278xuFmaSgn.mlir",
+              "from": "tmpzn61nu6dFmaSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -24808,7 +24808,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmpj3dcp_3u.synth.mlir",
+              "to": "tmptctmn3q3.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -24831,7 +24831,7 @@
           "tv_verified": 21,
           "tv_results": [
             {
-              "from": "tmpmr7nf01nFmaShare.mlir",
+              "from": "tmpxh8xm9l5FmaShare.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -24942,7 +24942,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpff5ba_ky.synth.mlir",
+              "to": "tmpreopy1ut.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -24965,7 +24965,7 @@
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmp21bzp_ssFmaShareSgn.mlir",
+              "from": "tmpp3y2l40yFmaShareSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -25076,7 +25076,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmphora28g3.synth.mlir",
+              "to": "tmphz3fpn5_.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -25099,7 +25099,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmprgvd2se6DotProductSgn.mlir",
+              "from": "tmphfe2usxmDotProductSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -25205,7 +25205,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp3hu78iaf.synth.mlir",
+              "to": "tmpdgarz_sq.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -25228,7 +25228,7 @@
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmpgstudg6qAllOneDet.test.tmp.mlir",
+              "from": "tmpza7h9qbrAllOneDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -25264,7 +25264,7 @@
             },
             {
               "from": "0_6_synth-lower-variadic.mlir",
-              "to": "tmpshmobpou.synth.mlir",
+              "to": "tmpn0ytsg_t.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -25287,7 +25287,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpzvl03uwySumZeroDet.test.tmp.mlir",
+              "from": "tmp06sd0jz1SumZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -25363,7 +25363,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmphaopo77e.synth.mlir",
+              "to": "tmphlvb88va.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -25386,7 +25386,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpglwf4b2bLeadOneDet.test.tmp.mlir",
+              "from": "tmp74c39iisLeadOneDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -25462,7 +25462,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpt_5p_bjl.synth.mlir",
+              "to": "tmpl2ku_dhb.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -25485,7 +25485,7 @@
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmphyv7gv81Dec.test.tmp.mlir",
+              "from": "tmpu0y66x0hDec.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -25546,7 +25546,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmp7zowuhn0.synth.mlir",
+              "to": "tmpmxswyu00.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -25569,7 +25569,7 @@
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmpbpngm10wRedAnd.test.tmp.mlir",
+              "from": "tmp_2sdqzosRedAnd.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -25605,7 +25605,7 @@
             },
             {
               "from": "0_6_synth-lower-variadic.mlir",
-              "to": "tmprj6h5k8h.synth.mlir",
+              "to": "tmp9_hh3d6g.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -25628,7 +25628,7 @@
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmp1p37lvi5IncC.test.tmp.mlir",
+              "from": "tmph_fmeyfiIncC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -25679,7 +25679,7 @@
             },
             {
               "from": "0_9_synth-structural-hash.mlir",
-              "to": "tmpezlite3o.synth.mlir",
+              "to": "tmpgzrjrepx.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -25702,7 +25702,7 @@
           "tv_verified": 21,
           "tv_results": [
             {
-              "from": "tmpo5rv74nmAddSubV.test.tmp.mlir",
+              "from": "tmpywz609zgAddSubV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -25803,7 +25803,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmpsmudq3ea.synth.mlir",
+              "to": "tmpv82xpewl.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -25826,7 +25826,7 @@
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmppwsb_b51Log2.test.tmp.mlir",
+              "from": "tmp3m0z0qzfLog2.test.tmp.mlir",
               "to": "0_0_comb-balance-mux.mlir",
               "status": "equiv"
             },
@@ -25882,7 +25882,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmph0gw7i7s.synth.mlir",
+              "to": "tmpx5afhafn.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -25905,7 +25905,7 @@
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmphhkq_hnfAddMod2Nm1s0.test.tmp.mlir",
+              "from": "tmpmrm44x5vAddMod2Nm1s0.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -25976,7 +25976,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpt2xjkodi.synth.mlir",
+              "to": "tmpucytf_xa.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -25999,7 +25999,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpg2q369t4SubC.test.tmp.mlir",
+              "from": "tmp1fg2awgkSubC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -26080,7 +26080,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmp7762k2ri.synth.mlir",
+              "to": "tmp7ort_qcg.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -26103,7 +26103,7 @@
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmptae3yjwbCmpEQ.test.tmp.mlir",
+              "from": "tmpqy58ikgwCmpEQ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -26134,7 +26134,7 @@
             },
             {
               "from": "0_5_synth-lower-variadic.mlir",
-              "to": "tmp7dsjulr1.synth.mlir",
+              "to": "tmp1riflnl_.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -26157,7 +26157,7 @@
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmpmrgxr85rFullAdder.test.tmp.mlir",
+              "from": "tmp53j7sxt0FullAdder.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -26188,7 +26188,7 @@
             },
             {
               "from": "0_5_synth-structural-hash.mlir",
-              "to": "tmp3_905393.synth.mlir",
+              "to": "tmpqouszr9p.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -26211,7 +26211,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpi5asfbe5SubCZ.test.tmp.mlir",
+              "from": "tmpls2aw_baSubCZ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -26297,7 +26297,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpa893c35k.synth.mlir",
+              "to": "tmp24wbm3y6.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -26320,7 +26320,7 @@
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmp6_5y1089Cnt.test.tmp.mlir",
+              "from": "tmp8_bcyy3fCnt.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -26386,7 +26386,7 @@
             },
             {
               "from": "0_12_synth-lower-variadic.mlir",
-              "to": "tmp67ncgav9.synth.mlir",
+              "to": "tmpwx2zi5wk.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -26409,7 +26409,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpit12zqqhIncDec.test.tmp.mlir",
+              "from": "tmpca1eezmvIncDec.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -26485,7 +26485,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmplda4ww20.synth.mlir",
+              "to": "tmp6ohsguiy.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -26508,7 +26508,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpd9w8gsq6AddMop.test.tmp.mlir",
+              "from": "tmp2jh6wo9jAddMop.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -26584,7 +26584,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmp8n8s368h.synth.mlir",
+              "to": "tmphu5lk9zp.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -26607,7 +26607,7 @@
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmp0i12ihflAddMod2Nm1.test.tmp.mlir",
+              "from": "tmpfnwy8agaAddMod2Nm1.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -26678,7 +26678,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmp9eoqbxum.synth.mlir",
+              "to": "tmp8fc0y4h4.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -26701,7 +26701,7 @@
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpwtehbj7hGray2Bin.test.tmp.mlir",
+              "from": "tmp713dxdocGray2Bin.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -26732,7 +26732,7 @@
             },
             {
               "from": "0_5_synth-structural-hash.mlir",
-              "to": "tmpx4yjfx0f.synth.mlir",
+              "to": "tmpe5l3q6sd.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -26755,7 +26755,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpe2scj8r5NegC.test.tmp.mlir",
+              "from": "tmpk3y9ar62NegC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -26836,7 +26836,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmp4qku8mpz.synth.mlir",
+              "to": "tmpd2qyh_by.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -26859,7 +26859,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpiyang817AddSubC.test.tmp.mlir",
+              "from": "tmplio3e53rAddSubC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -26955,7 +26955,7 @@
             },
             {
               "from": "0_18_synth-structural-hash.mlir",
-              "to": "tmp6dljtun9.synth.mlir",
+              "to": "tmp80b_cwy5.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -26978,7 +26978,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmphhqoavmkAddSub.test.tmp.mlir",
+              "from": "tmp5ocgum34AddSub.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -27064,7 +27064,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpwbanbfuz.synth.mlir",
+              "to": "tmpgw2g7jpr.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -27087,7 +27087,7 @@
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmp8de1l0xlAllZeroDet.test.tmp.mlir",
+              "from": "tmpu1wvdlbmAllZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -27113,7 +27113,7 @@
             },
             {
               "from": "0_4_synth-lower-variadic.mlir",
-              "to": "tmpn_1m24jt.synth.mlir",
+              "to": "tmpnddkl0ky.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -27136,7 +27136,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp90wmknoqNeg.test.tmp.mlir",
+              "from": "tmpcwf37m4tNeg.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -27212,7 +27212,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmp0qstucmq.synth.mlir",
+              "to": "tmp8r8ynf38.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -27235,7 +27235,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpz_6figa9MulSgn.test.tmp.mlir",
+              "from": "tmpc1jcqn3dMulSgn.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -27341,7 +27341,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpb_5yk9lw.synth.mlir",
+              "to": "tmp0v5cde3k.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -27364,7 +27364,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpf_z4iiznMulUns.test.tmp.mlir",
+              "from": "tmpgpgmnmamMulUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -27475,7 +27475,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpnqqcoqig.synth.mlir",
+              "to": "tmp_mmdqs11.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -27498,7 +27498,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpxgxqd6z_AddMulUns.test.tmp.mlir",
+              "from": "tmpr3i9ypf3AddMulUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -27609,7 +27609,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpcyz5bvum.synth.mlir",
+              "to": "tmpo8gtxt_h.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -27632,7 +27632,7 @@
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmp2ty82f8yCmpGE.test.tmp.mlir",
+              "from": "tmpni1hbsogCmpGE.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -27663,7 +27663,7 @@
             },
             {
               "from": "0_5_synth-structural-hash.mlir",
-              "to": "tmp63smpku_.synth.mlir",
+              "to": "tmp29atfl17.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -27686,7 +27686,7 @@
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmps0zvovvzDecC.test.tmp.mlir",
+              "from": "tmpwlh58ukwDecC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -27752,7 +27752,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmpcozhtyif.synth.mlir",
+              "to": "tmp4ud2zbke.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -27775,7 +27775,7 @@
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpjruha7uyBin2Gray.test.tmp.mlir",
+              "from": "tmpwatg5cf9Bin2Gray.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -27801,7 +27801,7 @@
             },
             {
               "from": "0_4_canonicalize.mlir",
-              "to": "tmpgv_f0r22.synth.mlir",
+              "to": "tmp_0q6uy5z.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -27824,7 +27824,7 @@
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpzprirmeyCmpEQGE.test.tmp.mlir",
+              "from": "tmpb2m0c_8tCmpEQGE.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -27875,7 +27875,7 @@
             },
             {
               "from": "0_9_synth-structural-hash.mlir",
-              "to": "tmpmum60ooh.synth.mlir",
+              "to": "tmp8s_3k76h.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -27898,7 +27898,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpefa605psAbsVal.test.tmp.mlir",
+              "from": "tmp3o7m_5x1AbsVal.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -27979,7 +27979,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmp303_rlkl.synth.mlir",
+              "to": "tmpcvt1syeg.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -28002,7 +28002,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp7am893vrSubV.test.tmp.mlir",
+              "from": "tmpn5hcja_eSubV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -28083,7 +28083,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpkq7ohv8m.synth.mlir",
+              "to": "tmpmi3o7snh.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -28106,7 +28106,7 @@
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmpnxv4phvvAdd.test.tmp.mlir",
+              "from": "tmp3u6q3e9fAdd.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -28167,7 +28167,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmpljmkcttk.synth.mlir",
+              "to": "tmp_tfd9tf4.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -28190,7 +28190,7 @@
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpf_v_vr26MulAddUns.test.tmp.mlir",
+              "from": "tmp5g9ki924MulAddUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -28301,7 +28301,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpvjhhsjsl.synth.mlir",
+              "to": "tmpo8rh6nsr.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -28324,7 +28324,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp9xky4pe8LeadSignDet.test.tmp.mlir",
+              "from": "tmpc_rr1s33LeadSignDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -28400,7 +28400,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpnq5kuzii.synth.mlir",
+              "to": "tmpkwhbzonc.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -28423,7 +28423,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpk0ubtf72SubVZ.test.tmp.mlir",
+              "from": "tmpd_borploSubVZ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -28509,7 +28509,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpj8st9zt4.synth.mlir",
+              "to": "tmpjiwe41bu.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -28532,7 +28532,7 @@
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpfri6qnxbMulAddSgn.test.tmp.mlir",
+              "from": "tmp48jnu4jrMulAddSgn.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -28643,7 +28643,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpcl08gtbj.synth.mlir",
+              "to": "tmpqrb2y5fj.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -28666,7 +28666,7 @@
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpc5xstihpAddC.test.tmp.mlir",
+              "from": "tmpjbr0kp_mAddC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -28737,7 +28737,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpjr37kgey.synth.mlir",
+              "to": "tmp1pyixzl6.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -28760,7 +28760,7 @@
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpz4nxdubcRedOr.test.tmp.mlir",
+              "from": "tmp_x_3ykfgRedOr.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -28786,7 +28786,7 @@
             },
             {
               "from": "0_4_synth-lower-variadic.mlir",
-              "to": "tmpxpyz54jn.synth.mlir",
+              "to": "tmpuannl7ma.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -28809,7 +28809,7 @@
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpmhap2a66AddCsv.test.tmp.mlir",
+              "from": "tmpj085tc27AddCsv.test.tmp.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -28860,7 +28860,7 @@
             },
             {
               "from": "0_9_synth-structural-hash.mlir",
-              "to": "tmptrpj16x0.synth.mlir",
+              "to": "tmpmonw50ap.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -28883,7 +28883,7 @@
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmphsus75ryInc.test.tmp.mlir",
+              "from": "tmph58b30hwInc.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -28939,7 +28939,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmpjf27r7eq.synth.mlir",
+              "to": "tmpg452nr02.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -28962,7 +28962,7 @@
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmppz8ckcx6AddCfast.test.tmp.mlir",
+              "from": "tmpno0fgl30AddCfast.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -29033,7 +29033,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpsns8g8ez.synth.mlir",
+              "to": "tmpulebg_dv.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -29056,7 +29056,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpjxkfoidrSub.test.tmp.mlir",
+              "from": "tmpdyml0jkeSub.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -29137,7 +29137,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmp3djea0zs.synth.mlir",
+              "to": "tmpjmc3x4q_.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -29160,7 +29160,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpzyl61uroAddV.test.tmp.mlir",
+              "from": "tmpwd_423fdAddV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -29236,7 +29236,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpst9niufh.synth.mlir",
+              "to": "tmp03eggv5_.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -29259,7 +29259,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpxk8c7qz0IncDecC.test.tmp.mlir",
+              "from": "tmpu_sven_tIncDecC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -29340,7 +29340,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmp_qta6_go.synth.mlir",
+              "to": "tmp31a8_136.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -29363,7 +29363,7 @@
           "tv_verified": 5,
           "tv_results": [
             {
-              "from": "tmpx9my91y4RedXor.test.tmp.mlir",
+              "from": "tmplv7ljseaRedXor.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -29384,7 +29384,7 @@
             },
             {
               "from": "0_3_synth-structural-hash.mlir",
-              "to": "tmplymau6ew.synth.mlir",
+              "to": "tmp4zunnl4n.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -29407,7 +29407,7 @@
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpph4buckdDecode.test.tmp.mlir",
+              "from": "tmpgqjh3ozzDecode.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -29478,7 +29478,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmprh8yx06m.synth.mlir",
+              "to": "tmpvd9khj3k.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -29501,7 +29501,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpzsfvvbx3LeadZeroDet.test.tmp.mlir",
+              "from": "tmpk9kb53aiLeadZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -29577,7 +29577,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmptukiqxcq.synth.mlir",
+              "to": "tmpdha3x_28.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -29600,7 +29600,7 @@
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmpwn_xe3f1FullAdder.test.tmp.mlir",
+              "from": "tmp5pkg9565FullAdder.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -29631,7 +29631,7 @@
             },
             {
               "from": "0_5_synth-structural-hash.mlir",
-              "to": "tmpc__e2wvp.synth.mlir",
+              "to": "tmpm66tx6ev.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -29654,7 +29654,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpu8oia2elSubCZ.test.tmp.mlir",
+              "from": "tmpflv2xpteSubCZ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -29740,7 +29740,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpmbex28r1.synth.mlir",
+              "to": "tmp9vzlts1i.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -29763,7 +29763,7 @@
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmp_bn0dam1Dec.test.tmp.mlir",
+              "from": "tmpr_inw_fqDec.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -29824,7 +29824,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmp0j_ferxq.synth.mlir",
+              "to": "tmpi3ehd888.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -29847,7 +29847,7 @@
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpwb9jvzejIncC.test.tmp.mlir",
+              "from": "tmpomq859zmIncC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -29898,7 +29898,7 @@
             },
             {
               "from": "0_9_synth-structural-hash.mlir",
-              "to": "tmpmdwwd7kg.synth.mlir",
+              "to": "tmp4zpl3f_k.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -29921,7 +29921,7 @@
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmpnqggy4fkCmpEQGE.test.tmp.mlir",
+              "from": "tmpz8vuiw93CmpEQGE.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -29977,7 +29977,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmp3vb8gugu.synth.mlir",
+              "to": "tmpeqqwjj_a.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30000,7 +30000,7 @@
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmp14tz5451CmpEQ.test.tmp.mlir",
+              "from": "tmpxsx3oqygCmpEQ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -30031,7 +30031,7 @@
             },
             {
               "from": "0_5_synth-lower-variadic.mlir",
-              "to": "tmpenaoq8rq.synth.mlir",
+              "to": "tmpilkj73e_.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30054,7 +30054,7 @@
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmpdpx3c_dqLeadOneDet.test.tmp.mlir",
+              "from": "tmpcyq_ceiqLeadOneDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -30120,7 +30120,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmpux6a7w0x.synth.mlir",
+              "to": "tmp6rgbpu3l.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30143,7 +30143,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpd6aukw03SubV.test.tmp.mlir",
+              "from": "tmpwlla7j_pSubV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -30224,7 +30224,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmp_1fo4mc6.synth.mlir",
+              "to": "tmp69r7p5eq.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30247,7 +30247,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpxj2r9ml6AddSub.test.tmp.mlir",
+              "from": "tmp19hvdn93AddSub.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -30333,7 +30333,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmp_k6yxdtg.synth.mlir",
+              "to": "tmpxe_wapmq.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30356,7 +30356,7 @@
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmpirnxrsvtGray2Bin.test.tmp.mlir",
+              "from": "tmpxye3u5oqGray2Bin.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -30387,7 +30387,7 @@
             },
             {
               "from": "0_5_synth-structural-hash.mlir",
-              "to": "tmppp40mvot.synth.mlir",
+              "to": "tmpenkybc8m.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30410,7 +30410,7 @@
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmp0ilrvpq7AllOneDet.test.tmp.mlir",
+              "from": "tmpevuo_2vzAllOneDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -30446,7 +30446,7 @@
             },
             {
               "from": "0_6_synth-lower-variadic.mlir",
-              "to": "tmp9q8uiqvx.synth.mlir",
+              "to": "tmpesdgvd8j.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30469,7 +30469,7 @@
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpuppoxiw2Decode.test.tmp.mlir",
+              "from": "tmpnow33wixDecode.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -30520,7 +30520,7 @@
             },
             {
               "from": "0_9_canonicalize.mlir",
-              "to": "tmpmsej1owh.synth.mlir",
+              "to": "tmp_33h_ozl.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30543,7 +30543,7 @@
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpaez7og74AddCsv.test.tmp.mlir",
+              "from": "tmpan_q_ru6AddCsv.test.tmp.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -30594,7 +30594,7 @@
             },
             {
               "from": "0_9_synth-structural-hash.mlir",
-              "to": "tmpotvziu4a.synth.mlir",
+              "to": "tmp4dzv6i5s.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30617,7 +30617,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmps1w06qzmAddV.test.tmp.mlir",
+              "from": "tmpkaruq75oAddV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -30693,7 +30693,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpzcr4vj02.synth.mlir",
+              "to": "tmptg_81kp5.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30716,7 +30716,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp6ot_8qu3IncDec.test.tmp.mlir",
+              "from": "tmpi8z05qj7IncDec.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -30792,7 +30792,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpsguc76_t.synth.mlir",
+              "to": "tmp8bjqswgn.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30815,7 +30815,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp9_9j2vskNeg.test.tmp.mlir",
+              "from": "tmpabu2se9cNeg.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -30891,7 +30891,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpdqdqdya7.synth.mlir",
+              "to": "tmpvu415q8x.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -30914,7 +30914,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpoewxmjm7SubVZ.test.tmp.mlir",
+              "from": "tmphrch30i0SubVZ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -31000,7 +31000,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmp6_ob_044.synth.mlir",
+              "to": "tmp_nkn0qwv.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -31023,7 +31023,7 @@
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmp38ngqq9eCnt.test.tmp.mlir",
+              "from": "tmpkf09974xCnt.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -31089,7 +31089,7 @@
             },
             {
               "from": "0_12_synth-lower-variadic.mlir",
-              "to": "tmpxhfp19mj.synth.mlir",
+              "to": "tmpu27tj699.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -31112,7 +31112,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpw1udl7zkAddSubC.test.tmp.mlir",
+              "from": "tmpt1jc9ic5AddSubC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -31208,7 +31208,7 @@
             },
             {
               "from": "0_18_synth-structural-hash.mlir",
-              "to": "tmphqhnqtk1.synth.mlir",
+              "to": "tmp3d6dzqwo.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -31231,7 +31231,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpbaymovlzIncDecC.test.tmp.mlir",
+              "from": "tmpqzzfjlgoIncDecC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -31312,7 +31312,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpqnzybxy3.synth.mlir",
+              "to": "tmpcfhelrxy.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -31335,7 +31335,7 @@
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpvzglx49jAddC.test.tmp.mlir",
+              "from": "tmpbcnzj8nbAddC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -31406,7 +31406,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpb47nq1c4.synth.mlir",
+              "to": "tmpdpe02lmr.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -31429,7 +31429,7 @@
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmpn9eff1v5Add.test.tmp.mlir",
+              "from": "tmpz6m7gefnAdd.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -31490,7 +31490,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmpkgnvfxqy.synth.mlir",
+              "to": "tmp3bcrp6sb.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -31513,7 +31513,7 @@
           "tv_verified": 22,
           "tv_results": [
             {
-              "from": "tmpkih8rmc9AddSubV.test.tmp.mlir",
+              "from": "tmphh4wy16eAddSubV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -31619,7 +31619,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp9eubw8up.synth.mlir",
+              "to": "tmpwi9rv9o3.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -31642,7 +31642,7 @@
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmpkhpqeb_yCmpGE.test.tmp.mlir",
+              "from": "tmpuiy89m4yCmpGE.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -31678,7 +31678,7 @@
             },
             {
               "from": "0_6_synth-structural-hash.mlir",
-              "to": "tmpjmgykdz_.synth.mlir",
+              "to": "tmpza32t5f9.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -31701,7 +31701,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp9kwgbrdaSubC.test.tmp.mlir",
+              "from": "tmp4xodmafpSubC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -31782,7 +31782,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmprevc666t.synth.mlir",
+              "to": "tmp75d88fjp.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -31805,7 +31805,7 @@
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmptd1xcukoAddMod2Nm1.test.tmp.mlir",
+              "from": "tmpmnyic7xwAddMod2Nm1.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -31871,7 +31871,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmp_ae4z7ez.synth.mlir",
+              "to": "tmp701cdo7n.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -31894,7 +31894,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp_888zlz4NegC.test.tmp.mlir",
+              "from": "tmp37o6hmmxNegC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -31975,7 +31975,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpr00w2jru.synth.mlir",
+              "to": "tmpdgd73pjv.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -31998,7 +31998,7 @@
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmpf20i7xj5Inc.test.tmp.mlir",
+              "from": "tmp98790jswInc.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -32054,7 +32054,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmp9g_kmmma.synth.mlir",
+              "to": "tmpjim2xz3z.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -32077,7 +32077,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpysyujfh_AddMop.test.tmp.mlir",
+              "from": "tmp_g85mrhcAddMop.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -32153,7 +32153,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpik89tqcz.synth.mlir",
+              "to": "tmpeoi8v1vn.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -32176,7 +32176,7 @@
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmpmlqqc39hLeadSignDet.test.tmp.mlir",
+              "from": "tmpqfifdjz4LeadSignDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -32242,7 +32242,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmpielx36kv.synth.mlir",
+              "to": "tmpx7jwec7a.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -32265,7 +32265,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpiaab8vv1AbsVal.test.tmp.mlir",
+              "from": "tmp8wrw025jAbsVal.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -32346,7 +32346,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpix3_ddyg.synth.mlir",
+              "to": "tmpocyc_e2x.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -32369,7 +32369,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp6e_gp00cSub.test.tmp.mlir",
+              "from": "tmp9_zf1d59Sub.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -32450,7 +32450,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpkmto6pct.synth.mlir",
+              "to": "tmpc0d5ce3c.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -32473,7 +32473,7 @@
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmpyipugxrtLeadZeroDet.test.tmp.mlir",
+              "from": "tmppa3hds8bLeadZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -32539,7 +32539,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmp0hw8vwmg.synth.mlir",
+              "to": "tmp94ugvhjx.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -32562,7 +32562,7 @@
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmpa9b3r75eDecC.test.tmp.mlir",
+              "from": "tmpntxfaqkxDecC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -32628,7 +32628,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmpickd72qp.synth.mlir",
+              "to": "tmp_wol6_to.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -32651,7 +32651,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmppd41lntyMulSgn.test.tmp.mlir",
+              "from": "tmpfu_t4xl5MulSgn.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -32752,7 +32752,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmp59p5u1rv.synth.mlir",
+              "to": "tmpj6sqo4eq.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -32775,7 +32775,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpvood0001MulAddSgn.test.tmp.mlir",
+              "from": "tmp_tbohgc1MulAddSgn.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -32881,7 +32881,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpuc6dfhi0.synth.mlir",
+              "to": "tmpy6p1m922.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -32904,7 +32904,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmp0860isf3MulAddUns.test.tmp.mlir",
+              "from": "tmpl0594crpMulAddUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -33010,7 +33010,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpwcudn_2n.synth.mlir",
+              "to": "tmpy_2wuukz.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -33033,7 +33033,7 @@
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpwbwwczfhAddCfast.test.tmp.mlir",
+              "from": "tmp1vuzhenpAddCfast.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -33104,7 +33104,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmptyic_v70.synth.mlir",
+              "to": "tmparqhq5j8.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -33127,7 +33127,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpu2fr4kwjSumZeroDet.test.tmp.mlir",
+              "from": "tmpyv9sprrwSumZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -33203,7 +33203,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpsfelq_ke.synth.mlir",
+              "to": "tmpt9xxt5au.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -33226,7 +33226,7 @@
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmpx9pi5xv4RedAnd.test.tmp.mlir",
+              "from": "tmprk90oau8RedAnd.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -33262,7 +33262,7 @@
             },
             {
               "from": "0_6_synth-lower-variadic.mlir",
-              "to": "tmp391qsjr2.synth.mlir",
+              "to": "tmpvrgz2knl.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -33285,7 +33285,7 @@
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpkzatx19qBin2Gray.test.tmp.mlir",
+              "from": "tmpns6hrmmiBin2Gray.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -33311,7 +33311,7 @@
             },
             {
               "from": "0_4_canonicalize.mlir",
-              "to": "tmph7_b4dz7.synth.mlir",
+              "to": "tmpbbnx6z4_.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -33334,7 +33334,7 @@
           "tv_verified": 10,
           "tv_results": [
             {
-              "from": "tmpz7jq17tnLog2.test.tmp.mlir",
+              "from": "tmp6rmfu78_Log2.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -33380,7 +33380,7 @@
             },
             {
               "from": "0_8_synth-structural-hash.mlir",
-              "to": "tmpo1w5kmsn.synth.mlir",
+              "to": "tmpbtp3_k_q.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -33403,7 +33403,7 @@
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmp64glm08_AddMulUns.test.tmp.mlir",
+              "from": "tmpuh7adpnnAddMulUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -33514,7 +33514,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpre2mpx46.synth.mlir",
+              "to": "tmpanh1evj0.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -33537,7 +33537,7 @@
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpkyl86untAllZeroDet.test.tmp.mlir",
+              "from": "tmp46znxvu6AllZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -33563,7 +33563,7 @@
             },
             {
               "from": "0_4_synth-lower-variadic.mlir",
-              "to": "tmpe6fdmp28.synth.mlir",
+              "to": "tmpbx48pczb.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -33586,7 +33586,7 @@
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpmgdw4_4zAddMod2Nm1s0.test.tmp.mlir",
+              "from": "tmpp29vy5j1AddMod2Nm1s0.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -33657,7 +33657,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmps1esrfds.synth.mlir",
+              "to": "tmphdjne08n.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -33680,7 +33680,7 @@
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpp2_rezdxRedOr.test.tmp.mlir",
+              "from": "tmp176e2b_pRedOr.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -33706,7 +33706,7 @@
             },
             {
               "from": "0_4_synth-lower-variadic.mlir",
-              "to": "tmpcroctj6r.synth.mlir",
+              "to": "tmpcjrn5b9s.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -33729,7 +33729,7 @@
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp_q82fyfuMulUns.test.tmp.mlir",
+              "from": "tmp3ap9kr6rMulUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -33830,7 +33830,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmp57yg4438.synth.mlir",
+              "to": "tmp47n0j0kq.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -33853,7 +33853,7 @@
           "tv_verified": 4,
           "tv_results": [
             {
-              "from": "tmpfsebby5iRedXor.test.tmp.mlir",
+              "from": "tmpubm14p5iRedXor.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -33869,7 +33869,7 @@
             },
             {
               "from": "0_2_convert-comb-to-synth.mlir",
-              "to": "tmp0cbzjuds.synth.mlir",
+              "to": "tmpamkkg0rf.synth.mlir",
               "status": "equiv"
             }
           ]
