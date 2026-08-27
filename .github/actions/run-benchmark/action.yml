@@ -33,6 +33,18 @@ inputs:
     description: 'Enable translation validation (TV) with bitwuzla'
     required: false
     default: 'false'
+  verify_result:
+    description: 'Verify the synthesised result with circt-lec and record synthesis/verification times'
+    required: false
+    default: 'false'
+  verify_solver:
+    description: 'Solver command used by --verify-result'
+    required: false
+    default: 'bitwuzla'
+  verify_timeout:
+    description: 'Per-benchmark timeout in seconds for the verification check'
+    required: false
+    default: '300'
 
 runs:
   using: composite
@@ -49,13 +61,19 @@ runs:
         if [ "${{ inputs.synth_tool }}" = "circt" ] && [ "${{ inputs.enable_tv }}" = "true" ]; then
           TV_PARAM="-DTV_SOLVER=bitwuzla"
         fi
+        VERIFY_PARAM=""
+        if [ "${{ inputs.synth_tool }}" = "circt" ] && [ "${{ inputs.verify_result }}" = "true" ]; then
+          VERIFY_PARAM="-DVERIFY_RESULT=1"
+          VERIFY_PARAM="$VERIFY_PARAM -DVERIFY_SOLVER=\"${{ inputs.verify_solver }}\""
+          VERIFY_PARAM="$VERIFY_PARAM -DVERIFY_TIMEOUT=${{ inputs.verify_timeout }}"
+        fi
         IFS=',' read -ra BWS <<< "${{ inputs.bitwidths }}"
         for BW in "${BWS[@]}"; do
           eval lit -v benchmarks/comb \
             -DSYNTH_TOOL=${{ inputs.synth_tool }} \
             -DTEST_OUTPUT_DIR=${{ inputs.output_dir }} \
             -DBW=$BW \
-            $ABC_PARAM $EXTRA_PARAM $TV_PARAM || true
+            $ABC_PARAM $EXTRA_PARAM $TV_PARAM $VERIFY_PARAM || true
         done
 
     - name: Aggregate results

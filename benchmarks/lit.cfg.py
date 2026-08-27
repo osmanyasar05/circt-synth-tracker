@@ -53,6 +53,9 @@ circt_synth_extra_args = lit_config.params.get('CIRCT_SYNTH_EXTRA_ARGS', '')
 abc_commands = lit_config.params.get('ABC_COMMANDS', '')
 run_lec = lit_config.params.get('RUN_LEC', '')
 tv_solver = lit_config.params.get('TV_SOLVER', '')
+verify_result = lit_config.params.get('VERIFY_RESULT', '')
+verify_solver = lit_config.params.get('VERIFY_SOLVER', 'bitwuzla')
+verify_timeout = lit_config.params.get('VERIFY_TIMEOUT', '')
 keep_tv_artifacts = lit_config.params.get('KEEP_TV_ARTIFACTS', '')
 
 circt_synth_wrapper = f'run-circt-synth --circt-synth {circt_synth} --circt-verilog {circt_verilog} --circt-translate {circt_translate} --circt-lec {circt_lec}'
@@ -63,6 +66,17 @@ if run_lec:
 if tv_solver:
     circt_synth_wrapper += ' --run-tv'
     circt_synth_wrapper += f' --tv-solver=\"{tv_solver}\"'
+
+# Verify the synthesised result and record how long it takes. The reference
+# is chosen inside run-circt-synth: the Lean snapshot when --verified-datapath
+# is in use, otherwise the original input MLIR.
+if verify_result:
+    circt_synth_wrapper += ' --verify-result'
+    if not tv_solver:
+        # --verify-result shares --tv-solver; supply it when TV is not enabled.
+        circt_synth_wrapper += f' --tv-solver=\"{verify_solver}\"'
+    if verify_timeout:
+        circt_synth_wrapper += f' --tv-timeout={verify_timeout}'
 
 if keep_tv_artifacts:
     circt_synth_wrapper += ' --keep-tv-artifacts'

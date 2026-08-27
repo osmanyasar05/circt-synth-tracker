@@ -18,6 +18,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
 from pathlib import Path
 
 
@@ -32,6 +33,13 @@ def run_command(cmd, description):
         sys.exit(result.returncode)
 
     return result
+
+
+def run_command_timed(cmd, description):
+    """Run a command, returning (result, wall_clock_seconds)."""
+    start = time.perf_counter()
+    result = run_command(cmd, description)
+    return result, time.perf_counter() - start
 
 
 def _tv_sort_key(p):
@@ -220,6 +228,16 @@ def main():
         help="Timeout in seconds for circt-lec (default: 10)",
     )
     parser.add_argument(
+        "--verify-result",
+        action="store_true",
+        help=(
+            "Verify the synthesised result with circt-lec and record how long "
+            "it takes. With --verified-datapath the reference is the Lean "
+            "snapshot (only the unverified tail is checked); otherwise it is "
+            "the original input MLIR. Needs --tv-solver."
+        ),
+    )
+    parser.add_argument(
         "--run-tv",
         action="store_true",
         help=(
@@ -316,6 +334,27 @@ def main():
         if args.circt_synth_extra_args:
             synth_cmd.extend(args.circt_synth_extra_args.split())
 
+        # When the verified lowering is in play, ask circt-synth to dump the IR
+        # at the Lean proof boundary -- right after the verified pass, before
+        # any unverified one. Taken inside the pass manager, so it is provably
+        # the same IR the rest of the pipeline consumed.
+        verified_snapshot = None
+        if args.verify_result and "--verified-datapath" in (
+            args.circt_synth_extra_args or ""
+        ):
+            verified_snapshot = Path(str(output_file) + ".snapshot.mlir")
+            synth_cmd.append(
+                f"--verified-datapath-snapshot={verified_snapshot}"
+            )
+
+        if args.verify_result and not args.tv_solver:
+            print(
+                "Error: --verify-result requires --tv-solver "
+                "(e.g. --tv-solver 'z3 -in')",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+
         if args.run_tv:
             if args.keep_tv_artifacts:
                 import shutil
@@ -335,7 +374,8 @@ def main():
             print(f"  TV: dumping per-pass IR to {tv_tree_dir}", file=sys.stderr)
 
         print("Step 2: Synthesizing MLIR...", file=sys.stderr)
-        result = run_command(synth_cmd, "MLIR synthesis")
+        result, synth_time = run_command_timed(synth_cmd, "MLIR synthesis")
+        print(f"  Synthesis took {synth_time:.2f}s", file=sys.stderr)
 
         # Write synthesized MLIR to temporary file
         with open(synth_mlir_file, "w") as f:
@@ -376,6 +416,60 @@ def main():
             except subprocess.TimeoutExpired:
                 print(f"  LEC: TIMEOUT after {args.lec_timeout}s.", file=sys.stderr)
                 lec_sidecar.write_text('{"lec_status": "timeout"}\n')
+
+        # Step 2b2: Verify the synthesised result, and time how long that takes.
+        #
+        # The two lowerings are trusted differently, so they are checked
+        # against different references:
+        #
+        #   datapath  final vs the original input MLIR. Nothing about this
+        #             flow is proved, so the check must cover the whole
+        #             pipeline.
+        #   verified  final vs the snapshot taken right after the Lean
+        #             lowering. The compressor tree is already proved correct
+        #             in Lean, so only the unverified tail needs checking --
+        #             which is a strictly smaller obligation.
+        #
+        # Both use the same circt-lec + solver path and the same timeout, so
+        # the two times are directly comparable.
+        if args.verify_result:
+            reference = mlir_file
+            mode = "golden"
+            if verified_snapshot is not None and verified_snapshot.exists():
+                reference = verified_snapshot
+                mode = "post-lean"
+            elif verified_snapshot is not None:
+                print(
+                    "  Verify: --verified-datapath-snapshot produced no file; "
+                    "falling back to checking against the original input",
+                    file=sys.stderr,
+                )
+
+            print(
+                f"Step 2b2: Verifying result ({mode})...", file=sys.stderr
+            )
+            v_start = time.perf_counter()
+            verify_status = _run_lec_pair(args, reference, synth_mlir_file)
+            verify_time = time.perf_counter() - v_start
+            print(
+                f"  Verify: {verify_status} in {verify_time:.2f}s",
+                file=sys.stderr,
+            )
+            verify_info = {
+                "verify_status": verify_status,
+                "verify_mode": mode,
+                "verify_time_s": round(verify_time, 3),
+                "synth_time_s": round(synth_time, 3),
+                "total_time_s": round(synth_time + verify_time, 3),
+            }
+        else:
+            verify_info = {"synth_time_s": round(synth_time, 3)}
+
+        # The aggregator merges any <aig>.lec sidecar into the summary, so
+        # these land in summary_*.json alongside gates/depth/area.
+        Path(str(output_file) + ".lec").write_text(
+            json.dumps(verify_info) + "\n"
+        )
 
         # Step 2c: Run translation validation if requested
         if args.run_tv and tv_tree_dir:

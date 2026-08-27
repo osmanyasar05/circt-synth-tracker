@@ -41,6 +41,19 @@ on:
         required: false
         type: boolean
         default: true
+      verify_result:
+        description: 'Verify each arm''s synthesised result and record synthesis + verification time. The Datapath arm is checked against the original Verilog; the verified arm against the Lean snapshot, since its front half is already proved.'
+        required: false
+        type: boolean
+        default: true
+      verify_timeout:
+        description: 'Per-benchmark verification timeout in seconds. Expect timeouts at 16 and 32 bits; raise this to trade wall clock for coverage.'
+        required: false
+        default: '300'
+      verify_solver:
+        description: 'SMT solver command used for verification'
+        required: false
+        default: 'bitwuzla'
       publish:
         description: 'Publish the report to GitHub Pages'
         required: false
@@ -236,6 +249,9 @@ jobs:
           tool_label: 'datapath-dialect'
           tool_version: ${{ env.CIRCT_VERSION }}
           summary_file: summary_datapath.json
+          verify_result: ${{ inputs.verify_result == null && 'true' || inputs.verify_result }}
+          verify_solver: ${{ inputs.verify_solver || 'bitwuzla' }}
+          verify_timeout: ${{ inputs.verify_timeout || '300' }}
 
       - name: Run the verified arm
         uses: ./.github/actions/run-benchmark
@@ -247,6 +263,9 @@ jobs:
           tool_label: 'verified-lean'
           tool_version: ${{ env.CIRCT_VERSION }}
           summary_file: summary_verified.json
+          verify_result: ${{ inputs.verify_result == null && 'true' || inputs.verify_result }}
+          verify_solver: ${{ inputs.verify_solver || 'bitwuzla' }}
+          verify_timeout: ${{ inputs.verify_timeout || '300' }}
 
       - name: Compare the two arms
         run: |
