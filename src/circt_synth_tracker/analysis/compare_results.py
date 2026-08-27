@@ -1050,9 +1050,27 @@ def generate_html_report(
         )
     ]
 
+    # Tools that recorded how long synthesis and verification took. The two
+    # arms verify against different references -- the Datapath arm against the
+    # original Verilog, the verified arm against the Lean snapshot -- so the
+    # cell carries the mode as a tooltip rather than implying one comparison.
+    tools_with_timing = [
+        t
+        for t in tool_names
+        if any(
+            summaries[t].get("benchmarks", {}).get(b, {}).get("synth_time_s")
+            is not None
+            for b in all_benchmarks
+        )
+    ]
+
     # Add headers for each tool
     for tool in tool_names:
-        colspan = 7 if tool in tools_with_tv else 6
+        colspan = 6
+        if tool in tools_with_tv:
+            colspan += 1
+        if tool in tools_with_timing:
+            colspan += 2
         html += f"                    <th class='tool-column' colspan='{colspan}'>{escape(tool)}</th>\n"
     if equiv_results is not None:
         html += "                    <th>CEC</th>\n"
@@ -1068,6 +1086,8 @@ def generate_html_report(
         html += "                    <th class='metric'>Gates</th><th class='metric'>Depth</th><th class='metric'>Area (ASAP7)</th><th class='metric'>Delay (ASAP7)</th><th class='metric'>Area (Sky130)</th><th class='metric'>Delay (Sky130)</th>\n"
         if tool in tools_with_tv:
             html += "                    <th class='metric'>SMT TV (bitwuzla)</th>\n"
+        if tool in tools_with_timing:
+            html += "                    <th class='metric'>Synth (s)</th><th class='metric'>Verify (s)</th>\n"
     if equiv_results is not None:
         html += "                    <th></th>\n"
 
@@ -1080,7 +1100,10 @@ def generate_html_report(
     # Add rows for each benchmark, grouped by category
     for category in sorted_categories:
         # Add category header row
-        num_columns = 1 + (len(tool_names) * 6) + len(tools_with_tv)
+        num_columns = (
+            1 + (len(tool_names) * 6) + len(tools_with_tv)
+            + (2 * len(tools_with_timing))
+        )
         if equiv_results is not None:
             num_columns += 1
         html += "                <tr>\n"
@@ -1219,6 +1242,61 @@ def generate_html_report(
                     else:
                         tv_cell = "<td style='text-align:center; color:#aaa'>—</td>"
                     html += f"                    {tv_cell}\n"
+
+                if tool in tools_with_timing:
+                    synth_s = result.get("synth_time_s")
+                    verify_s = result.get("verify_time_s")
+                    v_status = result.get("verify_status")
+                    v_mode = result.get("verify_mode", "")
+
+                    synth_txt = f"{synth_s:.2f}" if synth_s is not None else "—"
+                    html += (
+                        "                    <td class='metric'>"
+                        f"{synth_txt}</td>\n"
+                    )
+
+                    # What the verification proved differs per arm, so name the
+                    # reference in the tooltip. A timeout is shown as such --
+                    # never as a pass -- because an unfinished proof says
+                    # nothing about correctness.
+                    mode_label = {
+                        "post-lean": "vs the Lean snapshot "
+                        "(only the unverified tail is checked)",
+                        "golden": "vs the original Verilog "
+                        "(the whole pipeline is checked)",
+                    }.get(v_mode, v_mode or "")
+
+                    if v_status == "equiv" and verify_s is not None:
+                        tip = f"Proved equivalent {mode_label}".strip()
+                        cell = (
+                            "<td class='metric' "
+                            "style='background:rgb(200,255,200)' "
+                            f"title=\"{escape(tip)}\">{verify_s:.2f}</td>"
+                        )
+                    elif v_status == "non-equiv":
+                        tip = f"NOT equivalent {mode_label}".strip()
+                        cell = (
+                            "<td class='metric' "
+                            "style='background:rgb(255,200,200)' "
+                            f"title=\"{escape(tip)}\">✘</td>"
+                        )
+                    elif v_status == "timeout":
+                        tip = f"Solver timed out {mode_label}".strip()
+                        cell = (
+                            "<td class='metric' "
+                            "style='background:rgb(255,235,180)' "
+                            f"title=\"{escape(tip)}\">⏱</td>"
+                        )
+                    elif v_status:
+                        tip = f"{v_status} {mode_label}".strip()
+                        cell = (
+                            "<td class='metric' "
+                            "style='background:rgb(255,235,180)' "
+                            f"title=\"{escape(tip)}\">⚠</td>"
+                        )
+                    else:
+                        cell = "<td class='metric' style='color:#aaa'>—</td>"
+                    html += f"                    {cell}\n"
 
             if equiv_results is not None:
                 status = equiv_results.get(benchmark_name)
