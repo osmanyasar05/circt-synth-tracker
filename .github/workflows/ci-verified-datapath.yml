@@ -172,13 +172,25 @@ jobs:
       - name: Build datapath-cli from source
         if: ${{ inputs.lean_release == '' }}
         run: |
-          if [ ! -d lean-src ]; then
+          # Restoring the cache creates lean-src/.lake, so lean-src exists with
+          # no sources in it. Test for a tracked file, not the directory, and
+          # clone into a temporary path so the restored .lake is preserved.
+          if [ ! -f lean-src/lean-toolchain ]; then
             git clone --depth=1 \
               --branch "${{ inputs.lean_ref || 'circt_connection' }}" \
               "https://github.com/${{ inputs.lean_repository || 'opencompl/datapath-verification' }}.git" \
-              lean-src
+              lean-src-clone
+            mkdir -p lean-src
+            # Move sources in alongside whatever the cache restored.
+            (cd lean-src-clone && tar cf - .) | (cd lean-src && tar xf -)
+            rm -rf lean-src-clone
           fi
           cd lean-src
+          if [ ! -f lean-toolchain ]; then
+            echo "::error::lean-src has no lean-toolchain; the clone did not land."
+            ls -la
+            exit 1
+          fi
           if [ ! -x "$HOME/.elan/bin/lake" ]; then
             # Install the toolchain this project pins. Using --default-toolchain
             # none leaves elan with nothing to run and every lake call fails with
