@@ -46,15 +46,15 @@
     "circt_version": "CIRCT firtool-1.159.0-8-geab8d1829",
     "abc_version": "CIRCT firtool-1.159.0-8-geab8d1829",
     "ratios": {
-      "lut_mapping_time": 1.0281519655987144,
-      "sop_balancing_time": 0.7267010593452139,
+      "lut_mapping_time": 1.126767766470103,
+      "sop_balancing_time": 0.823669088515449,
       "lut_count": 1.2453223806078986,
       "lut_depth": 1.0000635361578918,
       "aig_count": 1.4338869041183768,
       "aig_depth": 1.0110461191187867
     },
     "matched": {
-      "lut_mapping_time": 67,
+      "lut_mapping_time": 68,
       "sop_balancing_time": 76,
       "lut_count": 76,
       "lut_depth": 76,
