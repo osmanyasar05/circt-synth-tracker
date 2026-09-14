@@ -338,13 +338,22 @@ def main():
         # at the Lean proof boundary -- right after the verified pass, before
         # any unverified one. Taken inside the pass manager, so it is provably
         # the same IR the rest of the pipeline consumed.
+        # The second snapshot bounds the other side of the proof: the
+        # front-end passes between the input and the verified lowering (the
+        # n-ary mul split and the canonicalisation around it) are not covered
+        # by Lean, so they get an equivalence check of their own.
         verified_snapshot = None
+        frontend_snapshot = None
         if args.verify_result and "--verified-datapath" in (
             args.circt_synth_extra_args or ""
         ):
             verified_snapshot = Path(str(output_file) + ".snapshot.mlir")
             synth_cmd.append(
                 f"--verified-datapath-snapshot={verified_snapshot}"
+            )
+            frontend_snapshot = Path(str(output_file) + ".frontend.mlir")
+            synth_cmd.append(
+                f"--verified-datapath-frontend-snapshot={frontend_snapshot}"
             )
 
         if args.verify_result and not args.tv_solver:
@@ -462,6 +471,53 @@ def main():
                 "synth_time_s": round(synth_time, 3),
                 "total_time_s": round(synth_time + verify_time, 3),
             }
+
+            # Front-end leg: input vs the IR handed to the verified lowering.
+            # Only the verified flow produces this snapshot; the datapath arm
+            # is already checked end to end against the input, so it has no
+            # unproved front half to isolate.
+            if frontend_snapshot is not None and frontend_snapshot.exists():
+                print(
+                    "Step 2b3: Verifying front-end passes "
+                    "(input vs pre-Lean)...",
+                    file=sys.stderr,
+                )
+                f_start = time.perf_counter()
+                frontend_status = _run_lec_pair(
+                    args, mlir_file, frontend_snapshot
+                )
+                frontend_time = time.perf_counter() - f_start
+                print(
+                    f"  Verify front-end: {frontend_status} "
+                    f"in {frontend_time:.2f}s",
+                    file=sys.stderr,
+                )
+                verify_info["verify_frontend_status"] = frontend_status
+                verify_info["verify_frontend_time_s"] = round(
+                    frontend_time, 3
+                )
+                # Roll the front-end leg into the headline numbers, so
+                # verify_time_s stays "what it cost to verify this result"
+                # rather than naming one of the two legs.
+                verify_time += frontend_time
+                verify_info["verify_time_s"] = round(verify_time, 3)
+                verify_info["total_time_s"] = round(
+                    synth_time + verify_time, 3
+                )
+                # The result is only as good as its weakest leg.
+                if frontend_status != "equiv":
+                    verify_info["verify_status"] = (
+                        verify_status
+                        if verify_status != "equiv"
+                        else f"frontend-{frontend_status}"
+                    )
+            elif frontend_snapshot is not None:
+                print(
+                    "  Verify front-end: no snapshot produced; the front-end "
+                    "passes are unchecked in this run",
+                    file=sys.stderr,
+                )
+                verify_info["verify_frontend_status"] = "missing"
         else:
             verify_info = {"synth_time_s": round(synth_time, 3)}
 
