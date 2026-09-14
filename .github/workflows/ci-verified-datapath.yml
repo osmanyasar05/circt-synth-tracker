@@ -37,10 +37,10 @@ on:
         required: false
         default: '8,16,32'
       equiv_check:
-        description: 'Run combinational equivalence checking between the two arms'
+        description: 'Run combinational equivalence checking between the two arms. Off by default: the arms are compared for QoR, and each arm is checked on its own by verify_result.'
         required: false
         type: boolean
-        default: true
+        default: false
       verify_result:
         description: 'Verify each arm''s synthesised result and record synthesis + verification time. The Datapath arm is checked against the original Verilog; the verified arm against the Lean snapshot, since its front half is already proved.'
         required: false
@@ -268,10 +268,17 @@ jobs:
           verify_timeout: ${{ inputs.verify_timeout || '300' }}
 
       - name: Compare the two arms
+        env:
+          # Read through the environment, not by splicing the expression into
+          # the script. A boolean input is false when the box is unchecked and
+          # null on a scheduled run; `inputs.x || 'true'` treats both as
+          # truthy, which made the toggle impossible to turn off. Only the
+          # literal string "true" enables the check here.
+          EQUIV_CHECK: ${{ inputs.equiv_check }}
         run: |
           source .venv/bin/activate
           EQUIV_FLAG=""
-          [ "${{ inputs.equiv_check || 'true' }}" = "true" ] && EQUIV_FLAG="--equiv-check"
+          [ "$EQUIV_CHECK" = "true" ] && EQUIV_FLAG="--equiv-check"
           compare-results summary_datapath.json summary_verified.json -o report.html $EQUIV_FLAG
           compare-results summary_datapath.json summary_verified.json -o report.md $EQUIV_FLAG
           compare-results summary_datapath.json summary_verified.json -o report.json --format json
