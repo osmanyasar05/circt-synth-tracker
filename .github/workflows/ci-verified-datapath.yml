@@ -31,7 +31,7 @@ on:
       lean_ref:
         description: 'Ref of the Lean repo to build when no release is given'
         required: false
-        default: 'circt_connection'
+        default: 'main'
       bitwidths:
         description: 'Comma-separated operand widths'
         required: false
@@ -177,9 +177,9 @@ jobs:
           path: |
             lean-src/.lake
             ~/.elan
-          key: lean-${{ runner.os }}-${{ inputs.lean_ref || 'circt_connection' }}-${{ github.run_id }}
+          key: lean-${{ runner.os }}-${{ inputs.lean_ref || 'main' }}-${{ github.run_id }}
           restore-keys: |
-            lean-${{ runner.os }}-${{ inputs.lean_ref || 'circt_connection' }}-
+            lean-${{ runner.os }}-${{ inputs.lean_ref || 'main' }}-
             lean-${{ runner.os }}-
 
       - name: Build datapath-cli from source
@@ -190,7 +190,7 @@ jobs:
           # clone into a temporary path so the restored .lake is preserved.
           if [ ! -f lean-src/lean-toolchain ]; then
             git clone --depth=1 \
-              --branch "${{ inputs.lean_ref || 'circt_connection' }}" \
+              --branch "${{ inputs.lean_ref || 'main' }}" \
               "https://github.com/${{ inputs.lean_repository || 'opencompl/datapath-verification' }}.git" \
               lean-src-clone
             mkdir -p lean-src
