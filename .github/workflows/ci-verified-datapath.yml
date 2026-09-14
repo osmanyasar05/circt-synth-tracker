@@ -36,6 +36,17 @@ on:
         description: 'Comma-separated operand widths'
         required: false
         default: '8,16,32'
+      benchmarks:
+        description: 'Which comb suites to run'
+        required: false
+        type: choice
+        default: 'DatapathBench'
+        options:
+          - DatapathBench
+          - ELAU
+          - microbenchmarks
+          - DatapathBench,ELAU
+          - all
       equiv_check:
         description: 'Run combinational equivalence checking between the two arms. Off by default: the arms are compared for QoR, and each arm is checked on its own by verify_result.'
         required: false
@@ -240,11 +251,48 @@ jobs:
       - name: Setup tracker
         uses: ./.github/actions/setup-tracker
 
+      - name: Resolve the benchmark selection
+        env:
+          # Null on a scheduled run, which is falsy here, so the cron gets the
+          # same suite as the pre-filled dispatch form.
+          BENCHMARKS: ${{ inputs.benchmarks }}
+        run: |
+          SEL="${BENCHMARKS:-DatapathBench}"
+          if [ "$SEL" = "all" ]; then
+            PATHS="benchmarks/comb"
+          else
+            PATHS=""
+            IFS=',' read -ra NAMES <<< "$SEL"
+            for NAME in "${NAMES[@]}"; do
+              NAME="$(printf '%s' "$NAME" | tr -d '[:space:]')"
+              [ -z "$NAME" ] && continue
+              # Each comb suite carries its own lit.cfg.py, so a suite
+              # directory is a valid standalone lit target. Check for the
+              # config rather than the directory: lit exits 0 having run
+              # nothing if handed a path it cannot configure, which would
+              # publish an empty report.
+              if [ ! -f "benchmarks/comb/$NAME/lit.cfg.py" ]; then
+                echo "::error::No benchmark suite at benchmarks/comb/$NAME"
+                exit 1
+              fi
+              PATHS="$PATHS benchmarks/comb/$NAME"
+            done
+          fi
+          PATHS="$(printf '%s' "$PATHS" | sed 's/^ *//;s/ *$//')"
+          if [ -z "$PATHS" ]; then
+            echo "::error::No benchmark suites selected"
+            exit 1
+          fi
+          echo "Selection '$SEL' resolves to: $PATHS"
+          echo "BENCH_PATHS=$PATHS" >> $GITHUB_ENV
+          echo "BENCH_LABEL=$SEL" >> $GITHUB_ENV
+
       - name: Run the Datapath dialect arm
         uses: ./.github/actions/run-benchmark
         with:
           synth_tool: circt
           bitwidths: ${{ inputs.bitwidths || '8,16,32' }}
+          benchmark_paths: ${{ env.BENCH_PATHS }}
           output_dir: build_datapath
           tool_label: 'datapath-dialect'
           tool_version: ${{ env.CIRCT_VERSION }}
@@ -258,6 +306,7 @@ jobs:
         with:
           synth_tool: circt
           bitwidths: ${{ inputs.bitwidths || '8,16,32' }}
+          benchmark_paths: ${{ env.BENCH_PATHS }}
           circt_synth_extra_args: --verified-datapath --verified-datapath-lean-exe=${{ env.DATAPATH_CLI }}
           output_dir: build_verified
           tool_label: 'verified-lean'
@@ -295,6 +344,7 @@ jobs:
             echo "| circt-synth args | _(default)_ | \`--verified-datapath\` |"
             echo "| CIRCT | \`${CIRCT_VERSION}\` | \`${CIRCT_VERSION}\` |"
             echo "| Widths | \`${{ inputs.bitwidths || '8,16,32' }}\` | |"
+            echo "| Suites | \`${BENCH_LABEL:-DatapathBench}\` | |"
             echo ""
             [ -f report.md ] && cat report.md
           } >> $GITHUB_STEP_SUMMARY
