@@ -20,6 +20,10 @@ on:
         description: 'Branch, tag or SHA to build'
         required: false
         default: 'verified-datapath-zext'
+      circt_nightly_version:
+        description: 'CIRCT artifact supplying LLVM/MLIR and the tools we do not build (circt-verilog, circt-translate, circt-lec). Pinned, not "nightly": the fork is built against this artifact''s MLIR headers, so its LLVM has to match the fork''s own pin. firtool-1.154.0 carries llvm b1c56fb5, which is what verified-datapath-zext pins. Bump this only together with the fork.'
+        required: false
+        default: 'firtool-1.154.0'
       lean_release:
         description: 'Release tag in the Lean repo holding a prebuilt datapath-cli. Leave empty to build it from source.'
         required: false
@@ -90,6 +94,11 @@ jobs:
       bench_paths: ${{ steps.sel.outputs.bench_paths }}
       bench_label: ${{ steps.sel.outputs.bench_label }}
       widths: ${{ steps.sel.outputs.widths }}
+      # Single source of truth: build_circt compiles against this artifact's
+      # MLIR headers and benchmark takes circt-lec from it. If the two jobs
+      # ever installed different versions, circt-synth would be checked by a
+      # circt-lec built against a different LLVM.
+      circt_version: ${{ inputs.circt_nightly_version || 'firtool-1.154.0' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -139,6 +148,7 @@ jobs:
 
   build_circt:
     name: Build circt-synth
+    needs: setup
     runs-on: ubuntu-24.04
     outputs:
       circt_version: ${{ steps.select.outputs.circt_version }}
@@ -151,28 +161,31 @@ jobs:
       - name: Install native runner packages
         uses: ./.github/actions/setup-ubuntu-ci-tools
 
-      # The prebuilt nightly supplies LLVM/MLIR CMake config plus the tools we
-      # do not build ourselves (circt-verilog, circt-translate, circt-lec).
-      - name: Install CIRCT nightly
+      # The prebuilt artifact supplies LLVM/MLIR CMake config plus the tools
+      # we do not build ourselves (circt-verilog, circt-translate, circt-lec).
+      # It is pinned rather than tracking nightly, because the fork compiles
+      # against its MLIR headers: main has since moved to an LLVM that dropped
+      # SymbolTable::getSymbolAttrName(), which the fork still calls.
+      - name: Install the pinned CIRCT artifact
         uses: circt/install-circt@3f8dda6e1c1965537b5801a43c81c287bac4eae4 # v1.1.1
         with:
-          version: 'nightly'
+          version: ${{ needs.setup.outputs.circt_version }}
           github-token: ${{ github.token }}
 
       - name: Add CIRCT to PATH
         run: echo "$GITHUB_WORKSPACE/circt/bin" >> $GITHUB_PATH
 
-      # The nightly ships its own copy of the CIRCT headers. Those directories
+      # The artifact ships its own copy of the CIRCT headers. Those directories
       # end up on the include path ahead of the fork's, so tablegen reads a
-      # pattern from our source but the op definition from the nightly, and
+      # pattern from our source but the op definition from the artifact, and
       # fails on any op whose signature changed between the two revisions
       # (e.g. "firrtl.regreset argument number mismatch: 8 vs 9"). Only the
       # LLVM/MLIR halves of the artifact are needed to build against.
-      - name: Drop CIRCT headers from the nightly artifact
+      - name: Drop CIRCT headers from the prebuilt artifact
         run: |
           BEFORE=$(find "$GITHUB_WORKSPACE/circt" -type d -path '*/include/circt' | wc -l)
           find "$GITHUB_WORKSPACE/circt" -type d -path '*/include/circt' -prune -exec rm -rf {} +
-          echo "Removed $BEFORE stale CIRCT header dir(s) from the nightly."
+          echo "Removed $BEFORE stale CIRCT header dir(s) from the artifact."
 
       - name: Setup sccache
         uses: mozilla-actions/sccache-action@v0.0.9
@@ -182,7 +195,7 @@ jobs:
           MLIR_DIR=$(find "$GITHUB_WORKSPACE/circt" -name 'MLIRConfig.cmake' -printf '%h\n' | head -1)
           LLVM_DIR=$(find "$GITHUB_WORKSPACE/circt" -name 'LLVMConfig.cmake' -printf '%h\n' | head -1)
           if [ -z "$MLIR_DIR" ] || [ -z "$LLVM_DIR" ]; then
-            echo "::error::Could not locate LLVM/MLIR CMake config in the nightly artifact"
+            echo "::error::Could not locate LLVM/MLIR CMake config in the CIRCT artifact"
             exit 1
           fi
           echo "MLIR_DIR=$MLIR_DIR" >> $GITHUB_ENV
@@ -360,12 +373,13 @@ jobs:
       - name: Install native runner packages
         uses: ./.github/actions/setup-ubuntu-ci-tools
 
-      # circt-verilog, circt-translate and circt-lec come from the nightly;
-      # only circt-synth is replaced by the fork build below.
-      - name: Install CIRCT nightly
+      # circt-verilog, circt-translate and circt-lec come from the pinned
+      # artifact -- the same one build_circt compiled against -- and only
+      # circt-synth is replaced by the fork build below.
+      - name: Install the pinned CIRCT artifact
         uses: circt/install-circt@3f8dda6e1c1965537b5801a43c81c287bac4eae4 # v1.1.1
         with:
-          version: 'nightly'
+          version: ${{ needs.setup.outputs.circt_version }}
           github-token: ${{ github.token }}
 
       - name: Add CIRCT to PATH
