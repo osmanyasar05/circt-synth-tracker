@@ -79,15 +79,69 @@ permissions:
 concurrency:
   group: verified-datapath-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
-  compare:
-    name: Verified vs Datapath dialect
+  # setup, build_circt and build_lean have no dependencies on each other, so
+  # all three start at once. The two builds are the long poles and now overlap
+  # instead of running back to back.
+  setup:
+    name: Resolve the run configuration
     runs-on: ubuntu-24.04
-    defaults:
-      run:
-        shell: bash
+    outputs:
+      bench_paths: ${{ steps.sel.outputs.bench_paths }}
+      bench_label: ${{ steps.sel.outputs.bench_label }}
+      widths: ${{ steps.sel.outputs.widths }}
+    steps:
+      - uses: actions/checkout@v4
 
+      - name: Resolve the benchmark selection
+        id: sel
+        env:
+          # Null on a scheduled run, which is falsy here, so the cron gets the
+          # same suite as the pre-filled dispatch form.
+          BENCHMARKS: ${{ inputs.benchmarks }}
+          BITWIDTHS: ${{ inputs.bitwidths }}
+        run: |
+          SEL="${BENCHMARKS:-DatapathBench}"
+          if [ "$SEL" = "all" ]; then
+            PATHS="benchmarks/comb"
+          else
+            PATHS=""
+            IFS=',' read -ra NAMES <<< "$SEL"
+            for NAME in "${NAMES[@]}"; do
+              NAME="$(printf '%s' "$NAME" | tr -d '[:space:]')"
+              [ -z "$NAME" ] && continue
+              # Each comb suite carries its own lit.cfg.py, so a suite
+              # directory is a valid standalone lit target. Check for the
+              # config rather than the directory: lit exits 0 having run
+              # nothing if handed a path it cannot configure, which would
+              # publish an empty report.
+              if [ ! -f "benchmarks/comb/$NAME/lit.cfg.py" ]; then
+                echo "::error::No benchmark suite at benchmarks/comb/$NAME"
+                exit 1
+              fi
+              PATHS="$PATHS benchmarks/comb/$NAME"
+            done
+          fi
+          PATHS="$(printf '%s' "$PATHS" | sed 's/^ *//;s/ *$//')"
+          if [ -z "$PATHS" ]; then
+            echo "::error::No benchmark suites selected"
+            exit 1
+          fi
+          # The widths become a matrix dimension, so they have to leave this
+          # step as a JSON array for fromJSON.
+          WIDTHS="$(printf '%s' "${BITWIDTHS:-8,16,32}" | tr -d '[:space:]')"
+          JSON="$(printf '%s' "$WIDTHS" | awk -F, '{printf "["; for(i=1;i<=NF;i++){printf "%s\"%s\"", (i>1?",":""), $i}; printf "]"}')"
+          echo "Suites '$SEL' -> $PATHS"
+          echo "Widths -> $JSON"
+          echo "bench_paths=$PATHS" >> $GITHUB_OUTPUT
+          echo "bench_label=$SEL" >> $GITHUB_OUTPUT
+          echo "widths=$JSON" >> $GITHUB_OUTPUT
+
+  build_circt:
+    name: Build circt-synth
+    runs-on: ubuntu-24.04
+    outputs:
+      circt_version: ${{ steps.select.outputs.circt_version }}
     steps:
       - name: Checkout tracker
         uses: actions/checkout@v4
@@ -145,19 +199,22 @@ jobs:
           mlir_dir: ${{ env.MLIR_DIR }}
           llvm_dir: ${{ env.LLVM_DIR }}
 
-      # Use the freshly built circt-synth, but keep the nightly's other tools.
       - name: Select the built circt-synth
+        id: select
         run: |
           SYNTH="$GITHUB_WORKSPACE/circt-build/bin/circt-synth"
           if [ ! -x "$SYNTH" ]; then
             echo "::error::circt-synth was not built at $SYNTH"
             exit 1
           fi
+          export LD_LIBRARY_PATH="$GITHUB_WORKSPACE/circt-build/lib:${LD_LIBRARY_PATH:-}"
+          VERSION="$("$SYNTH" --version | tail -1 | xargs)"
+          echo "circt_version=$VERSION" >> $GITHUB_OUTPUT
           echo "CIRCT_SYNTH=$SYNTH" >> $GITHUB_ENV
-          echo "CIRCT_VERSION=$("$SYNTH" --version | tail -1 | xargs)" >> $GITHUB_ENV
 
       - name: Verify the fork exposes --verified-datapath
         run: |
+          export LD_LIBRARY_PATH="$GITHUB_WORKSPACE/circt-build/lib:${LD_LIBRARY_PATH:-}"
           if ! "$CIRCT_SYNTH" --help 2>&1 | grep -q -- '--verified-datapath'; then
             echo "::error::This circt-synth has no --verified-datapath flag."
             echo "Point circt_repository/circt_ref at a branch that carries it."
@@ -165,18 +222,40 @@ jobs:
           fi
           echo "Flag present."
 
+      # The fork is configured with BUILD_SHARED_LIBS=ON, so the binary alone
+      # is not runnable: ship circt-build/lib with it. The benchmark jobs
+      # unpack this at the same absolute path, which keeps the build tree's
+      # RPATH valid; they also set LD_LIBRARY_PATH in case it is not.
+      - name: Package circt-synth
+        run: |
+          tar czf circt-synth.tgz circt-build/bin/circt-synth circt-build/lib
+          echo "Packaged $(du -h circt-synth.tgz | cut -f1)"
+
+      - name: Upload circt-synth
+        uses: actions/upload-artifact@v4
+        with:
+          name: circt-synth
+          retention-days: 1
+          path: circt-synth.tgz
+
+  build_lean:
+    name: Build datapath-cli
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout tracker
+        uses: actions/checkout@v4
+
       - name: Fetch prebuilt datapath-cli
         if: ${{ inputs.lean_release != '' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          mkdir -p "$GITHUB_WORKSPACE/lean-bin"
+          mkdir -p lean-bin
           gh release download "${{ inputs.lean_release }}" \
             --repo "${{ inputs.lean_repository }}" \
             --pattern 'datapath-cli' \
-            --dir "$GITHUB_WORKSPACE/lean-bin"
-          chmod +x "$GITHUB_WORKSPACE/lean-bin/datapath-cli"
-          echo "DATAPATH_CLI=$GITHUB_WORKSPACE/lean-bin/datapath-cli" >> $GITHUB_ENV
+            --dir lean-bin
+          chmod +x lean-bin/datapath-cli
 
       # Cache the whole .lake tree, keyed on the toolchain plus the manifest.
       # A hit makes this step nearly instant; a miss still only downloads
@@ -241,80 +320,204 @@ jobs:
             echo "::error::lake build did not produce datapath-cli"
             exit 1
           fi
-          echo "DATAPATH_CLI=$PWD/$BIN" >> $GITHUB_ENV
+          mkdir -p "$GITHUB_WORKSPACE/lean-bin"
+          cp "$BIN" "$GITHUB_WORKSPACE/lean-bin/datapath-cli"
 
+      # Lean links the runtime statically, so the bare binary is portable and
+      # can be handed to the benchmark jobs as-is.
       - name: Check datapath-cli runs
         run: |
-          "$DATAPATH_CLI" mul 4 4 4 | head -1
+          set -o pipefail
+          chmod +x lean-bin/datapath-cli
+          ./lean-bin/datapath-cli mul 4 4 4 | head -1
           echo "datapath-cli responds."
+
+      - name: Upload datapath-cli
+        uses: actions/upload-artifact@v4
+        with:
+          name: datapath-cli
+          retention-days: 1
+          path: lean-bin/datapath-cli
+
+  # One job per (arm, bitwidth). These are what the runtime is actually spent
+  # on, and each gets its own runner, so the pool of cores available to lit
+  # grows with the matrix instead of being fixed at one machine's core count.
+  benchmark:
+    name: ${{ matrix.arm }} @ ${{ matrix.bw }}b
+    needs: [setup, build_circt, build_lean]
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        arm: [datapath, verified]
+        bw: ${{ fromJSON(needs.setup.outputs.widths) }}
+    steps:
+      - name: Checkout tracker
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install native runner packages
+        uses: ./.github/actions/setup-ubuntu-ci-tools
+
+      # circt-verilog, circt-translate and circt-lec come from the nightly;
+      # only circt-synth is replaced by the fork build below.
+      - name: Install CIRCT nightly
+        uses: circt/install-circt@3f8dda6e1c1965537b5801a43c81c287bac4eae4 # v1.1.1
+        with:
+          version: 'nightly'
+          github-token: ${{ github.token }}
+
+      - name: Add CIRCT to PATH
+        run: echo "$GITHUB_WORKSPACE/circt/bin" >> $GITHUB_PATH
+
+      - name: Download circt-synth
+        uses: actions/download-artifact@v4
+        with:
+          name: circt-synth
+
+      - name: Unpack circt-synth
+        run: |
+          tar xzf circt-synth.tgz
+          SYNTH="$GITHUB_WORKSPACE/circt-build/bin/circt-synth"
+          chmod +x "$SYNTH"
+          if [ ! -x "$SYNTH" ]; then
+            echo "::error::circt-synth missing after unpack"
+            exit 1
+          fi
+          echo "CIRCT_SYNTH=$SYNTH" >> $GITHUB_ENV
+          echo "LD_LIBRARY_PATH=$GITHUB_WORKSPACE/circt-build/lib:${LD_LIBRARY_PATH:-}" >> $GITHUB_ENV
+
+      - name: Download datapath-cli
+        uses: actions/download-artifact@v4
+        with:
+          name: datapath-cli
+          path: lean-bin
+
+      - name: Check the unpacked tools run
+        run: |
+          set -o pipefail
+          chmod +x lean-bin/datapath-cli
+          "$CIRCT_SYNTH" --version
+          ./lean-bin/datapath-cli mul 4 4 4 | head -1
 
       - name: Setup tracker
         uses: ./.github/actions/setup-tracker
 
-      - name: Resolve the benchmark selection
-        env:
-          # Null on a scheduled run, which is falsy here, so the cron gets the
-          # same suite as the pre-filled dispatch form.
-          BENCHMARKS: ${{ inputs.benchmarks }}
+      - name: Run the benchmarks
+        uses: ./.github/actions/run-benchmark
+        with:
+          synth_tool: circt
+          bitwidths: ${{ matrix.bw }}
+          benchmark_paths: ${{ needs.setup.outputs.bench_paths }}
+          circt_synth_extra_args: ${{ matrix.arm == 'verified' && format('--verified-datapath --verified-datapath-lean-exe={0}/lean-bin/datapath-cli', github.workspace) || '' }}
+          output_dir: build_${{ matrix.arm }}
+          tool_label: ${{ matrix.arm == 'verified' && 'verified-lean' || 'datapath-dialect' }}
+          tool_version: ${{ needs.build_circt.outputs.circt_version }}
+          summary_file: summary_${{ matrix.arm }}_${{ matrix.bw }}.json
+          verify_result: ${{ inputs.verify_result == null && 'true' || inputs.verify_result }}
+          verify_solver: ${{ inputs.verify_solver || 'bitwuzla' }}
+          verify_timeout: ${{ inputs.verify_timeout || '300' }}
+
+      # Ship the raw lit output rather than this job's summary, so the report
+      # job can run aggregate-results once over the union exactly as the
+      # single-job version did. Widths land in separate subdirectories, so
+      # unpacking every tarball into one tree merges them without collisions.
+      - name: Package results
+        if: always()
         run: |
-          SEL="${BENCHMARKS:-DatapathBench}"
-          if [ "$SEL" = "all" ]; then
-            PATHS="benchmarks/comb"
-          else
-            PATHS=""
-            IFS=',' read -ra NAMES <<< "$SEL"
-            for NAME in "${NAMES[@]}"; do
-              NAME="$(printf '%s' "$NAME" | tr -d '[:space:]')"
-              [ -z "$NAME" ] && continue
-              # Each comb suite carries its own lit.cfg.py, so a suite
-              # directory is a valid standalone lit target. Check for the
-              # config rather than the directory: lit exits 0 having run
-              # nothing if handed a path it cannot configure, which would
-              # publish an empty report.
-              if [ ! -f "benchmarks/comb/$NAME/lit.cfg.py" ]; then
-                echo "::error::No benchmark suite at benchmarks/comb/$NAME"
-                exit 1
-              fi
-              PATHS="$PATHS benchmarks/comb/$NAME"
-            done
-          fi
-          PATHS="$(printf '%s' "$PATHS" | sed 's/^ *//;s/ *$//')"
-          if [ -z "$PATHS" ]; then
-            echo "::error::No benchmark suites selected"
+          # This step runs even when the benchmark step died, so the directory
+          # may not exist. An empty tarball is fine: the report job checks for
+          # missing widths and refuses to publish two empty summaries.
+          mkdir -p build_${{ matrix.arm }}
+          tar czf results-${{ matrix.arm }}-${{ matrix.bw }}.tgz build_${{ matrix.arm }}
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-${{ matrix.arm }}-${{ matrix.bw }}
+          retention-days: 7
+          path: results-${{ matrix.arm }}-${{ matrix.bw }}.tgz
+
+  report:
+    name: Compare and publish
+    needs: [setup, build_circt, benchmark]
+    # fail-fast is off, so one arm dying should still produce a report for the
+    # rest rather than discarding the whole run's work.
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout tracker
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install native runner packages
+        uses: ./.github/actions/setup-ubuntu-ci-tools
+
+      - name: Setup tracker
+        uses: ./.github/actions/setup-tracker
+
+      - name: Download every arm and width
+        uses: actions/download-artifact@v4
+        with:
+          pattern: results-*
+          merge-multiple: true
+
+      - name: Unpack results
+        run: |
+          shopt -s nullglob
+          FOUND=0
+          for T in results-*.tgz; do
+            echo "unpacking $T"
+            tar xzf "$T"
+            FOUND=1
+          done
+          if [ "$FOUND" = "0" ]; then
+            echo "::error::No benchmark results were produced by any matrix job."
             exit 1
           fi
-          echo "Selection '$SEL' resolves to: $PATHS"
-          echo "BENCH_PATHS=$PATHS" >> $GITHUB_ENV
-          echo "BENCH_LABEL=$SEL" >> $GITHUB_ENV
+          find build_datapath build_verified -maxdepth 3 -type d 2>/dev/null | sort
 
-      - name: Run the Datapath dialect arm
-        uses: ./.github/actions/run-benchmark
-        with:
-          synth_tool: circt
-          bitwidths: ${{ inputs.bitwidths || '8,16,32' }}
-          benchmark_paths: ${{ env.BENCH_PATHS }}
-          output_dir: build_datapath
-          tool_label: 'datapath-dialect'
-          tool_version: ${{ env.CIRCT_VERSION }}
-          summary_file: summary_datapath.json
-          verify_result: ${{ inputs.verify_result == null && 'true' || inputs.verify_result }}
-          verify_solver: ${{ inputs.verify_solver || 'bitwuzla' }}
-          verify_timeout: ${{ inputs.verify_timeout || '300' }}
+      - name: Aggregate each arm
+        env:
+          CIRCT_VERSION: ${{ needs.build_circt.outputs.circt_version }}
+        run: |
+          source .venv/bin/activate
+          aggregate-results --tool 'datapath-dialect' --version "$CIRCT_VERSION" \
+            --results-dir build_datapath -o summary_datapath.json
+          aggregate-results --tool 'verified-lean' --version "$CIRCT_VERSION" \
+            --results-dir build_verified -o summary_verified.json
 
-      - name: Run the verified arm
-        uses: ./.github/actions/run-benchmark
-        with:
-          synth_tool: circt
-          bitwidths: ${{ inputs.bitwidths || '8,16,32' }}
-          benchmark_paths: ${{ env.BENCH_PATHS }}
-          circt_synth_extra_args: --verified-datapath --verified-datapath-lean-exe=${{ env.DATAPATH_CLI }}
-          output_dir: build_verified
-          tool_label: 'verified-lean'
-          tool_version: ${{ env.CIRCT_VERSION }}
-          summary_file: summary_verified.json
-          verify_result: ${{ inputs.verify_result == null && 'true' || inputs.verify_result }}
-          verify_solver: ${{ inputs.verify_solver || 'bitwuzla' }}
-          verify_timeout: ${{ inputs.verify_timeout || '300' }}
+      # A matrix job that died early leaves an empty summary behind. Comparing
+      # and publishing that would overwrite a good report with a blank one.
+      - name: Check both arms produced results
+        env:
+          EXPECTED_WIDTHS: ${{ needs.setup.outputs.widths }}
+        run: |
+          source .venv/bin/activate
+          python3 - <<'EOF'
+          import json, os, sys
+          expected = set(json.loads(os.environ["EXPECTED_WIDTHS"]))
+          bad = []
+          for f in ("summary_datapath.json", "summary_verified.json"):
+              marks = json.load(open(f)).get("benchmarks", {})
+              # Summary keys carry the width as a suffix, e.g. MulAddUns_16.
+              seen = {}
+              for k in marks:
+                  seen[k.rsplit("_", 1)[-1]] = seen.get(k.rsplit("_", 1)[-1], 0) + 1
+              print(f"{f}: {len(marks)} benchmarks across widths {sorted(seen)}")
+              for w in sorted(expected - set(seen)):
+                  print(f"::warning::{f} has no results at {w} bits; that job "
+                        f"failed or produced nothing, so the report is partial.")
+              if not marks:
+                  bad.append(f)
+          if bad:
+              print(f"::error::Empty summary: {', '.join(bad)}. Refusing to "
+                    f"publish a blank report over the last good one.")
+              sys.exit(1)
+          EOF
 
       - name: Compare the two arms
         env:
@@ -334,6 +537,9 @@ jobs:
 
       - name: Post summary
         if: always()
+        env:
+          CIRCT_VERSION: ${{ needs.build_circt.outputs.circt_version }}
+          BENCH_LABEL: ${{ needs.setup.outputs.bench_label }}
         run: |
           {
             echo "## Verified datapath vs CIRCT Datapath dialect"
@@ -346,7 +552,10 @@ jobs:
             echo "| Widths | \`${{ inputs.bitwidths || '8,16,32' }}\` | |"
             echo "| Suites | \`${BENCH_LABEL:-DatapathBench}\` | |"
             echo ""
-            [ -f report.md ] && cat report.md
+            # Trailing `|| true`: this step runs on failure too, and a missing
+            # report.md would otherwise make the step exit non-zero and mask
+            # whatever actually went wrong.
+            [ -f report.md ] && cat report.md || true
           } >> $GITHUB_STEP_SUMMARY
 
       - name: Upload artifacts
@@ -385,8 +594,8 @@ jobs:
   # Pages source expects.
   deploy:
     name: Publish report
-    needs: compare
-    if: ${{ inputs.publish || github.event_name == 'schedule' }}
+    needs: report
+    if: ${{ success() && (inputs.publish || github.event_name == 'schedule') }}
     runs-on: ubuntu-24.04
     environment:
       name: github-pages
