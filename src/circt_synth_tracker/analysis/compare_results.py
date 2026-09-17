@@ -1064,13 +1064,32 @@ def generate_html_report(
         )
     ]
 
+    # Which arms actually run the middle check. The verified arm never does --
+    # Lean discharges that segment inside the lowering pass, and what it cost
+    # is already in Synth (s) -- so it gets no EC2 column at all.
+    tools_with_ec2 = [
+        t
+        for t in tools_with_timing
+        if any(
+            leg.get("name") == "datapath"
+            for b in all_benchmarks
+            for leg in (
+                summaries[t]
+                .get("benchmarks", {})
+                .get(b, {})
+                .get("verify_legs")
+                or []
+            )
+        )
+    ]
+
     # Add headers for each tool
     for tool in tool_names:
         colspan = 6
         if tool in tools_with_tv:
             colspan += 1
         if tool in tools_with_timing:
-            colspan += 2
+            colspan += 5 if tool in tools_with_ec2 else 4
         html += f"                    <th class='tool-column' colspan='{colspan}'>{escape(tool)}</th>\n"
     if equiv_results is not None:
         html += "                    <th>CEC</th>\n"
@@ -1087,7 +1106,23 @@ def generate_html_report(
         if tool in tools_with_tv:
             html += "                    <th class='metric'>SMT TV (bitwuzla)</th>\n"
         if tool in tools_with_timing:
-            html += "                    <th class='metric'>Synth (s)</th><th class='metric'>Verify (s)</th>\n"
+            html += (
+                "                    <th class='metric'>Synth (s)</th>"
+                "<th class='metric' title='Equivalence check 1: input vs the "
+                "IR handed to the datapath lowering (n-ary mul split and "
+                "canonicalisation)'>EC1 front-end (s)</th>"
+            )
+            if tool in tools_with_ec2:
+                html += (
+                    "<th class='metric' title='Equivalence check 2: across "
+                    "the datapath lowering itself'>EC2 datapath (s)</th>"
+                )
+            html += (
+                "<th class='metric' title='Equivalence check 3: the lowered "
+                "IR vs the final result (CSE, canonicalisation, comb-&gt;AIG, "
+                "mapping)'>EC3 tail (s)</th>"
+                "<th class='metric'>Verify total (s)</th>\n"
+            )
     if equiv_results is not None:
         html += "                    <th></th>\n"
 
@@ -1102,7 +1137,8 @@ def generate_html_report(
         # Add category header row
         num_columns = (
             1 + (len(tool_names) * 6) + len(tools_with_tv)
-            + (2 * len(tools_with_timing))
+            + (4 * len(tools_with_timing))
+            + len(tools_with_ec2)
         )
         if equiv_results is not None:
             num_columns += 1
@@ -1255,16 +1291,68 @@ def generate_html_report(
                         f"{synth_txt}</td>\n"
                     )
 
-                    # What the verification proved differs per arm, so name the
-                    # reference in the tooltip. A timeout is shown as such --
-                    # never as a pass -- because an unfinished proof says
+                    # One column per equivalence check, then their sum. Split
+                    # out because the interesting comparison is per leg: the
+                    # two arms share EC1 and EC3 and differ only in EC2, which
+                    # the verified arm does not have to run at all.
+                    legs_by_name = {
+                        leg.get("name"): leg
+                        for leg in (result.get("verify_legs") or [])
+                    }
+                    leg_names = ["frontend", "tail"]
+                    if tool in tools_with_ec2:
+                        leg_names.insert(1, "datapath")
+                    for leg_name in leg_names:
+                        leg = legs_by_name.get(leg_name)
+                        if leg is None:
+                            tip = (
+                                f"No {leg_name} leg in this run "
+                                f"(mode: {v_mode or 'unknown'})"
+                            )
+                            leg_cell = (
+                                "<td class='metric' style='color:#aaa' "
+                                f"title=\"{escape(tip)}\">—</td>"
+                            )
+                        else:
+                            l_status = leg.get("status")
+                            l_time = leg.get("time_s")
+                            l_tip = (
+                                f"{leg.get('from')} -> {leg.get('to')}: "
+                                f"{l_status}"
+                            )
+                            if l_status == "equiv":
+                                bg = "rgb(200,255,200)"
+                                txt = f"{l_time:.2f}" if l_time is not None else "?"
+                            elif l_status == "non-equiv":
+                                bg, txt = "rgb(255,200,200)", "✘"
+                            elif l_status == "timeout":
+                                bg, txt = "rgb(255,235,180)", "⏱"
+                            else:
+                                bg, txt = "rgb(255,235,180)", "⚠"
+                            leg_cell = (
+                                f"<td class='metric' style='background:{bg}' "
+                                f"title=\"{escape(l_tip)}\">{txt}</td>"
+                            )
+                        html += f"                    {leg_cell}\n"
+
+                    # What the verification proved differs per arm, so name
+                    # the reference in the tooltip. A timeout is shown as such
+                    # -- never as a pass -- because an unfinished proof says
                     # nothing about correctness.
                     mode_label = {
-                        "post-lean": "vs the Lean snapshot "
-                        "(only the unverified tail is checked)",
+                        "post-lean": "in 2 legs, front-end and tail "
+                        "(the datapath lowering is proved in Lean)",
+                        "staged": "in 3 legs, front-end, datapath lowering "
+                        "and tail",
                         "golden": "vs the original Verilog "
-                        "(the whole pipeline is checked)",
+                        "(the whole pipeline in one check)",
                     }.get(v_mode, v_mode or "")
+
+                    # The per-leg times have their own columns now, so the
+                    # tooltip only carries what they cannot show.
+                    failed_leg = result.get("verify_failed_leg")
+                    if failed_leg:
+                        mode_label += f"\nweakest leg: {failed_leg}"
 
                     if v_status == "equiv" and verify_s is not None:
                         tip = f"Proved equivalent {mode_label}".strip()

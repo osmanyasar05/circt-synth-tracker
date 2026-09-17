@@ -97,6 +97,49 @@ def _run_lec_pair(args, from_file, to_file, smt_output_path=None):
         return "timeout"
 
 
+# How bad a leg outcome is. A non-equiv is a definite failure; an error or a
+# timeout is merely inconclusive, but neither may be reported as a pass.
+_STATUS_RANK = {"equiv": 0, "timeout": 1, "error": 2, "non-equiv": 3}
+
+
+def plan_verify_legs(
+    mlir_file, frontend_snapshot, datapath_snapshot, synth_mlir_file, verified
+):
+    """Decide which equivalence checks bound this run, in pipeline order.
+
+    The two snapshots cut the pipeline at the datapath lowering, giving three
+    segments that mean the same thing on both arms:
+
+        frontend  input -> pre-lowering IR. The n-ary mul split and the
+                  canonicalisation around it. Unproved on either arm.
+        datapath  the lowering itself. The verified arm skips this leg -- that
+                  is exactly what the Lean proof buys -- while the Datapath
+                  dialect arm has to discharge it with the solver.
+        tail      post-lowering IR -> final. CSE, canonicalisation, comb->AIG
+                  and mapping. Unproved on either arm.
+
+    Checking the segments separately rather than end to end is also what keeps
+    the obligations small enough for the solver to finish.
+
+    Without both snapshots there is no boundary to cut at -- --disable-datapath
+    runs no lowering, and a snapshot can fail to appear -- so the whole
+    pipeline is checked in one go instead. That is slower and more likely to
+    time out, but it is never weaker.
+
+    Returns (mode, legs), legs being (name, from_file, to_file) tuples.
+    """
+    have_frontend = frontend_snapshot is not None and frontend_snapshot.exists()
+    have_datapath = datapath_snapshot is not None and datapath_snapshot.exists()
+    if not (have_frontend and have_datapath):
+        return "golden", [("golden", mlir_file, synth_mlir_file)]
+
+    legs = [("frontend", mlir_file, frontend_snapshot)]
+    if not verified:
+        legs.append(("datapath", frontend_snapshot, datapath_snapshot))
+    legs.append(("tail", datapath_snapshot, synth_mlir_file))
+    return ("post-lean" if verified else "staged"), legs
+
+
 def run_tv(
     args, mlir_file, synth_mlir_file, output_file, tree_dir, keep_artifacts=False
 ):
@@ -231,10 +274,11 @@ def main():
         "--verify-result",
         action="store_true",
         help=(
-            "Verify the synthesised result with circt-lec and record how long "
-            "it takes. With --verified-datapath the reference is the Lean "
-            "snapshot (only the unverified tail is checked); otherwise it is "
-            "the original input MLIR. Needs --tv-solver."
+            "Verify the synthesised result with circt-lec and record how "
+            "long it takes. The pipeline is cut at the datapath lowering and "
+            "each segment checked separately: front-end, the lowering itself "
+            "and the unverified tail. --verified-datapath skips the middle "
+            "leg, which Lean already proved. Needs --tv-solver."
         ),
     )
     parser.add_argument(
@@ -334,26 +378,33 @@ def main():
         if args.circt_synth_extra_args:
             synth_cmd.extend(args.circt_synth_extra_args.split())
 
-        # When the verified lowering is in play, ask circt-synth to dump the IR
-        # at the Lean proof boundary -- right after the verified pass, before
-        # any unverified one. Taken inside the pass manager, so it is provably
-        # the same IR the rest of the pipeline consumed.
-        # The second snapshot bounds the other side of the proof: the
-        # front-end passes between the input and the verified lowering (the
-        # n-ary mul split and the canonicalisation around it) are not covered
-        # by Lean, so they get an equivalence check of their own.
-        verified_snapshot = None
-        frontend_snapshot = None
-        if args.verify_result and "--verified-datapath" in (
+        # Ask circt-synth to dump the IR on either side of the datapath
+        # lowering. Taken inside the pass manager, so each file is provably
+        # the same IR the rest of the pipeline consumed -- not a replay.
+        #
+        # The pair cuts the pipeline into three segments, and both arms are
+        # cut in the same two places, which is what makes their verification
+        # costs comparable:
+        #
+        #   input -> frontend      the n-ary mul split and the
+        #                          canonicalisation around it
+        #   frontend -> datapath   the lowering itself
+        #   datapath -> output     everything downstream
+        #
+        # --disable-datapath leaves no lowering to bracket, so no snapshot is
+        # written and the run falls back to one end-to-end check.
+        verified = "--verified-datapath" in (args.circt_synth_extra_args or "")
+        datapath_disabled = "--disable-datapath" in (
             args.circt_synth_extra_args or ""
-        ):
-            verified_snapshot = Path(str(output_file) + ".snapshot.mlir")
-            synth_cmd.append(
-                f"--verified-datapath-snapshot={verified_snapshot}"
-            )
+        )
+        datapath_snapshot = None
+        frontend_snapshot = None
+        if args.verify_result and not datapath_disabled:
+            datapath_snapshot = Path(str(output_file) + ".snapshot.mlir")
+            synth_cmd.append(f"--datapath-snapshot={datapath_snapshot}")
             frontend_snapshot = Path(str(output_file) + ".frontend.mlir")
             synth_cmd.append(
-                f"--verified-datapath-frontend-snapshot={frontend_snapshot}"
+                f"--datapath-frontend-snapshot={frontend_snapshot}"
             )
 
         if args.verify_result and not args.tv_solver:
@@ -426,98 +477,94 @@ def main():
                 print(f"  LEC: TIMEOUT after {args.lec_timeout}s.", file=sys.stderr)
                 lec_sidecar.write_text('{"lec_status": "timeout"}\n')
 
-        # Step 2b2: Verify the synthesised result, and time how long that takes.
+        # Step 2b2: Verify the synthesised result, and time how long it takes.
         #
-        # The two lowerings are trusted differently, so they are checked
-        # against different references:
+        # Both arms are checked over the same three pipeline segments, so the
+        # numbers compare directly; the verified arm simply has one fewer leg
+        # to run, because Lean already discharged the middle one. See
+        # plan_verify_legs for what each leg covers.
         #
-        #   datapath  final vs the original input MLIR. Nothing about this
-        #             flow is proved, so the check must cover the whole
-        #             pipeline.
-        #   verified  final vs the snapshot taken right after the Lean
-        #             lowering. The compressor tree is already proved correct
-        #             in Lean, so only the unverified tail needs checking --
-        #             which is a strictly smaller obligation.
-        #
-        # Both use the same circt-lec + solver path and the same timeout, so
-        # the two times are directly comparable.
+        # Every leg uses the same circt-lec + solver path and the same
+        # timeout, and the headline verify_time_s is their sum -- "what it
+        # cost to verify this result", not the cost of any one leg.
         if args.verify_result:
-            reference = mlir_file
-            mode = "golden"
-            if verified_snapshot is not None and verified_snapshot.exists():
-                reference = verified_snapshot
-                mode = "post-lean"
-            elif verified_snapshot is not None:
+            mode, legs = plan_verify_legs(
+                mlir_file,
+                frontend_snapshot,
+                datapath_snapshot,
+                synth_mlir_file,
+                verified,
+            )
+            if mode == "golden" and (
+                datapath_snapshot is not None or frontend_snapshot is not None
+            ):
                 print(
-                    "  Verify: --verified-datapath-snapshot produced no file; "
-                    "falling back to checking against the original input",
+                    "  Verify: expected snapshots were not produced; falling "
+                    "back to one end-to-end check against the input",
                     file=sys.stderr,
                 )
 
             print(
-                f"Step 2b2: Verifying result ({mode})...", file=sys.stderr
-            )
-            v_start = time.perf_counter()
-            verify_status = _run_lec_pair(args, reference, synth_mlir_file)
-            verify_time = time.perf_counter() - v_start
-            print(
-                f"  Verify: {verify_status} in {verify_time:.2f}s",
+                f"Step 2b2: Verifying result ({mode}, "
+                f"{len(legs)} leg(s))...",
                 file=sys.stderr,
             )
+            leg_results = []
+            verify_time = 0.0
+            for name, from_file, to_file in legs:
+                l_start = time.perf_counter()
+                status = _run_lec_pair(args, from_file, to_file)
+                l_time = time.perf_counter() - l_start
+                verify_time += l_time
+                print(
+                    f"  Verify [{name}]: {from_file.name} -> {to_file.name}: "
+                    f"{status} in {l_time:.2f}s",
+                    file=sys.stderr,
+                )
+                leg_results.append(
+                    {
+                        "name": name,
+                        "from": from_file.name,
+                        "to": to_file.name,
+                        "status": status,
+                        "time_s": round(l_time, 3),
+                    }
+                )
+
+            # The result is only as good as its weakest leg, and the leg that
+            # was weakest is the useful part of the report -- "the datapath
+            # engine timed out" and "the front-end passes are non-equiv" are
+            # very different findings.
+            worst = max(
+                leg_results,
+                key=lambda r: _STATUS_RANK.get(r["status"], len(_STATUS_RANK)),
+            )
             verify_info = {
-                "verify_status": verify_status,
+                "verify_status": worst["status"],
                 "verify_mode": mode,
                 "verify_time_s": round(verify_time, 3),
+                "verify_legs": leg_results,
                 "synth_time_s": round(synth_time, 3),
                 "total_time_s": round(synth_time + verify_time, 3),
             }
+            if worst["status"] != "equiv":
+                verify_info["verify_failed_leg"] = worst["name"]
 
-            # Front-end leg: input vs the IR handed to the verified lowering.
-            # Only the verified flow produces this snapshot; the datapath arm
-            # is already checked end to end against the input, so it has no
-            # unproved front half to isolate.
-            if frontend_snapshot is not None and frontend_snapshot.exists():
-                print(
-                    "Step 2b3: Verifying front-end passes "
-                    "(input vs pre-Lean)...",
-                    file=sys.stderr,
+            # Flat per-leg keys as well: the report and the history files read
+            # these directly, and verify_frontend_* predates verify_legs.
+            for r in leg_results:
+                verify_info[f"verify_{r['name']}_status"] = r["status"]
+                verify_info[f"verify_{r['name']}_time_s"] = r["time_s"]
+            print(
+                f"  Verify: {worst['status']} "
+                + (
+                    f"(weakest leg: {worst['name']}) "
+                    if worst["status"] != "equiv"
+                    else ""
                 )
-                f_start = time.perf_counter()
-                frontend_status = _run_lec_pair(
-                    args, mlir_file, frontend_snapshot
-                )
-                frontend_time = time.perf_counter() - f_start
-                print(
-                    f"  Verify front-end: {frontend_status} "
-                    f"in {frontend_time:.2f}s",
-                    file=sys.stderr,
-                )
-                verify_info["verify_frontend_status"] = frontend_status
-                verify_info["verify_frontend_time_s"] = round(
-                    frontend_time, 3
-                )
-                # Roll the front-end leg into the headline numbers, so
-                # verify_time_s stays "what it cost to verify this result"
-                # rather than naming one of the two legs.
-                verify_time += frontend_time
-                verify_info["verify_time_s"] = round(verify_time, 3)
-                verify_info["total_time_s"] = round(
-                    synth_time + verify_time, 3
-                )
-                # The result is only as good as its weakest leg.
-                if frontend_status != "equiv":
-                    verify_info["verify_status"] = (
-                        verify_status
-                        if verify_status != "equiv"
-                        else f"frontend-{frontend_status}"
-                    )
-            elif frontend_snapshot is not None:
-                print(
-                    "  Verify front-end: no snapshot produced; the front-end "
-                    "passes are unchecked in this run",
-                    file=sys.stderr,
-                )
-                verify_info["verify_frontend_status"] = "missing"
+                + f"in {verify_time:.2f}s total",
+                file=sys.stderr,
+            )
         else:
             verify_info = {"synth_time_s": round(synth_time, 3)}
 
