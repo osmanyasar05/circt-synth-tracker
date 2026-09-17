@@ -400310,13 +400310,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.147,
+          "synth_time_s": 0.135,
           "tv_status": "error",
           "tv_total": 24,
           "tv_verified": 22,
           "tv_results": [
             {
-              "from": "tmpcgbibaq1SqrSgn.mlir",
+              "from": "tmpio78zp5pSqrSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -400432,7 +400432,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmpiwpct12z.synth.mlir",
+              "to": "tmp_58an4se.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -400450,13 +400450,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.293,
+          "synth_time_s": 0.285,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmp6h5ghrxiFmaa.mlir",
+              "from": "tmp8onn1l2yFmaa.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -400562,7 +400562,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp6ap7_um_.synth.mlir",
+              "to": "tmpipm1fxx7.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -400580,13 +400580,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.23,
+          "synth_time_s": 0.224,
           "tv_status": "error",
           "tv_total": 24,
           "tv_verified": 21,
           "tv_results": [
             {
-              "from": "tmpulj08t91MulThreeSgn.mlir",
+              "from": "tmp0491fywuMulThreeSgn.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -400702,7 +400702,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmpxnf257o2.synth.mlir",
+              "to": "tmpl1qnbdgy.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -400720,13 +400720,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.309,
+          "synth_time_s": 0.297,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmphzi2_vgxFmaaSgn.mlir",
+              "from": "tmp4fwuzwchFmaaSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -400832,7 +400832,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpm6x5961p.synth.mlir",
+              "to": "tmpbrf9z7km.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -400850,13 +400850,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.251,
+          "synth_time_s": 0.245,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 21,
           "tv_results": [
             {
-              "from": "tmp51g78svcFmaShare.mlir",
+              "from": "tmpzm3zcdhlFmaShare.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -400967,7 +400967,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp1ke68cjg.synth.mlir",
+              "to": "tmp38kkizhr.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -400985,13 +400985,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.237,
+          "synth_time_s": 0.23,
           "tv_status": "error",
           "tv_total": 24,
           "tv_verified": 21,
           "tv_results": [
             {
-              "from": "tmpzvsy16_fMulThree.mlir",
+              "from": "tmph_wwro1iMulThree.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -401107,7 +401107,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmp6jbxo3e1.synth.mlir",
+              "to": "tmpwjru__da.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -401125,13 +401125,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.127,
+          "synth_time_s": 0.122,
           "tv_status": "error",
           "tv_total": 18,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpdp8fzwwrSqrUns.mlir",
+              "from": "tmpg9vt7bjjSqrUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -401217,7 +401217,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmp3p0e1rzu.synth.mlir",
+              "to": "tmpnck31kpr.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -401235,13 +401235,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.214,
+          "synth_time_s": 0.209,
           "tv_status": "error",
           "tv_total": 21,
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpvrzackghFma.mlir",
+              "from": "tmpm5at_ylkFma.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -401342,7 +401342,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmprfmjdqyf.synth.mlir",
+              "to": "tmpyd6bbilt.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -401360,13 +401360,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.236,
+          "synth_time_s": 0.228,
           "tv_status": "error",
           "tv_total": 21,
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpmd7fvrwfCarrySaveCompare.mlir",
+              "from": "tmpi_ftz09_CarrySaveCompare.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -401467,7 +401467,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmp3jeo4p6j.synth.mlir",
+              "to": "tmp97cba2vq.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -401485,13 +401485,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.323,
+          "synth_time_s": 0.331,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpvgmq9wjyAddMulSgn.mlir",
+              "from": "tmp94nv2upbAddMulSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -401602,7 +401602,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpchpt0cmv.synth.mlir",
+              "to": "tmp1k_j25ow.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -401626,7 +401626,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpkbkbrudkAddThreeSgn.mlir",
+              "from": "tmp82zz_1ahAddThreeSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -401702,7 +401702,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpiye7r8pj.synth.mlir",
+              "to": "tmpgyyz0noj.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -401720,13 +401720,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.264,
+          "synth_time_s": 0.252,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpwmrvtokxAddMulUns.mlir",
+              "from": "tmp36drlileAddMulUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -401837,7 +401837,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpta8rjr1h.synth.mlir",
+              "to": "tmpxeouwwg0.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -401855,13 +401855,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.209,
+          "synth_time_s": 0.208,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpxc0z2csxCarrySaveSelect.mlir",
+              "from": "tmp8brz9ti5CarrySaveSelect.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -401967,7 +401967,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpj9cqk2ii.synth.mlir",
+              "to": "tmp_gihj0rq.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -401985,13 +401985,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.062,
+          "synth_time_s": 0.064,
           "tv_status": "pass",
           "tv_total": 15,
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmp0nsamsj1AddThree.mlir",
+              "from": "tmplkbziu_nAddThree.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -402062,7 +402062,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpsan1nmza.synth.mlir",
+              "to": "tmp3buty25i.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -402080,13 +402080,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.263,
+          "synth_time_s": 0.257,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmp90cyrxhiFmaShareSgn.mlir",
+              "from": "tmp3h5qj7e4FmaShareSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -402197,7 +402197,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpxkevq0fj.synth.mlir",
+              "to": "tmpacwdd50c.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -402215,13 +402215,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.113,
+          "synth_time_s": 0.071,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpf41uertkAddMop.mlir",
+              "from": "tmpt2tu857nAddMop.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -402297,7 +402297,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmped_37sxd.synth.mlir",
+              "to": "tmpen5qzfsw.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -402315,13 +402315,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.22,
+          "synth_time_s": 0.215,
           "tv_status": "error",
           "tv_total": 21,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp14nakr0bFmaSgn.mlir",
+              "from": "tmpio8tc2qwFmaSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -402422,7 +402422,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmpr_3hp5pp.synth.mlir",
+              "to": "tmpk4o832qz.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -402440,13 +402440,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.408,
+          "synth_time_s": 0.388,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpb26c44_bAlphaBlend.mlir",
+              "from": "tmprhfenwjcAlphaBlend.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -402552,7 +402552,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpa_44ffor.synth.mlir",
+              "to": "tmpz819e6uo.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -402570,13 +402570,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.378,
+          "synth_time_s": 0.361,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpk883e99aDotProduct.mlir",
+              "from": "tmpvd3iopxdDotProduct.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -402682,7 +402682,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpfoxsmpf1.synth.mlir",
+              "to": "tmpqg14j8q7.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -402700,13 +402700,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.233,
+          "synth_time_s": 0.222,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmp1jygdbimMulAddSgn.mlir",
+              "from": "tmp5_jmiuzzMulAddSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -402812,7 +402812,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp7dm4fkok.synth.mlir",
+              "to": "tmp2hxi43s9.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -402830,13 +402830,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.23,
+          "synth_time_s": 0.226,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpw42aws28MulAddUns.mlir",
+              "from": "tmpqxp9w3a7MulAddUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -402942,7 +402942,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpcv30j0mg.synth.mlir",
+              "to": "tmpgvv9baie.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -402960,13 +402960,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.389,
+          "synth_time_s": 0.367,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp4nr4_ionDotProductSgn.mlir",
+              "from": "tmppcvyy0p0DotProductSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -403072,7 +403072,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp1nsts1bs.synth.mlir",
+              "to": "tmpewnn8o2x.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -403090,13 +403090,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.407,
+          "synth_time_s": 1.49,
           "tv_status": "error",
           "tv_total": 24,
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpou6fw7qvFmaShare.mlir",
+              "from": "tmpd85zek76FmaShare.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -403212,7 +403212,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmp_3skgz7u.synth.mlir",
+              "to": "tmp0nreftwk.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -403230,13 +403230,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 2.717,
+          "synth_time_s": 2.891,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpff_eky30DotProduct.mlir",
+              "from": "tmpzhh0n5e9DotProduct.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -403347,7 +403347,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpdrr3ju3i.synth.mlir",
+              "to": "tmp4at3prh0.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -403365,13 +403365,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.399,
+          "synth_time_s": 1.369,
           "tv_status": "error",
           "tv_total": 24,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp7h7xwlzpMulThreeSgn.mlir",
+              "from": "tmpimheg5_1MulThreeSgn.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -403487,7 +403487,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmpvljrjagy.synth.mlir",
+              "to": "tmp5b2yr7f6.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -403505,13 +403505,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 2.74,
+          "synth_time_s": 2.847,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmpij_7chphAlphaBlend.mlir",
+              "from": "tmp5ot78y3rAlphaBlend.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -403622,7 +403622,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp52h5nzv_.synth.mlir",
+              "to": "tmp7qwsvc9o.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -403640,13 +403640,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.167,
+          "synth_time_s": 1.102,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmpf13wb8fgCarrySaveSelect.mlir",
+              "from": "tmpdquao1mbCarrySaveSelect.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -403757,7 +403757,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp8dmzvf7p.synth.mlir",
+              "to": "tmpv0j3pq9m.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -403775,13 +403775,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.333,
+          "synth_time_s": 1.377,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp9tg3gwbpAddMulSgn.mlir",
+              "from": "tmpy9ykkydvAddMulSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -403892,7 +403892,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpeuxtxyo_.synth.mlir",
+              "to": "tmpgvuraq4_.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -403910,13 +403910,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.311,
+          "synth_time_s": 1.313,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmptd6c4njtAddMulUns.mlir",
+              "from": "tmp8z35j7buAddMulUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -404022,7 +404022,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpmkerqvbp.synth.mlir",
+              "to": "tmp5rypgwfy.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -404040,13 +404040,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.564,
+          "synth_time_s": 1.578,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp0l974rj8FmaaSgn.mlir",
+              "from": "tmpna3z0gdpFmaaSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -404157,7 +404157,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpnqg3vrmz.synth.mlir",
+              "to": "tmpt0pm8_of.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -404175,13 +404175,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 2.558,
+          "synth_time_s": 2.572,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp4vb66prmDotProductSgn.mlir",
+              "from": "tmp4et4s3xoDotProductSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -404292,7 +404292,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmppb87ejhh.synth.mlir",
+              "to": "tmpww61gxo7.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -404310,13 +404310,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.855,
+          "synth_time_s": 0.791,
           "tv_status": "error",
           "tv_total": 18,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp5bzwro9rSqrUns.mlir",
+              "from": "tmpr673__hnSqrUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -404402,7 +404402,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpbquowe4l.synth.mlir",
+              "to": "tmp0mk4zagb.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -404420,13 +404420,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.431,
+          "synth_time_s": 1.43,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpjz_bi2hoFmaShareSgn.mlir",
+              "from": "tmpstyo70y4FmaShareSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -404537,7 +404537,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp1czzbigw.synth.mlir",
+              "to": "tmppp2m1la6.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -404555,13 +404555,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.142,
+          "synth_time_s": 0.134,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpmwwimanyAddThreeSgn.mlir",
+              "from": "tmpzr7tk5aoAddThreeSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -404637,7 +404637,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpwkbl2a0g.synth.mlir",
+              "to": "tmp671reoe_.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -404655,13 +404655,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.163,
+          "synth_time_s": 0.157,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpc40wezwlAddMop.mlir",
+              "from": "tmpz17a_imhAddMop.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -404737,7 +404737,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpdwyhige5.synth.mlir",
+              "to": "tmplrvbc8xa.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -404755,13 +404755,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.136,
+          "synth_time_s": 0.131,
           "tv_status": "pass",
           "tv_total": 15,
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpukc8fr3eAddThree.mlir",
+              "from": "tmpn8fr_w5mAddThree.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -404832,7 +404832,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmp8oavl86t.synth.mlir",
+              "to": "tmp7oqolx1k.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -404850,13 +404850,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.285,
+          "synth_time_s": 1.264,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp_e8yr0_8Fma.mlir",
+              "from": "tmp8qylxu7eFma.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -404967,7 +404967,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp26rd30y8.synth.mlir",
+              "to": "tmp8z067g4s.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -404985,13 +404985,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.419,
+          "synth_time_s": 1.372,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpnbqsw6wiCarrySaveCompare.mlir",
+              "from": "tmpfnwouflzCarrySaveCompare.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -405102,7 +405102,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp2z9u4sb5.synth.mlir",
+              "to": "tmprsxng63i.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -405120,13 +405120,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.262,
+          "synth_time_s": 1.231,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpcplma930MulAddSgn.mlir",
+              "from": "tmp3ci51yzdMulAddSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -405237,7 +405237,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpzp86h507.synth.mlir",
+              "to": "tmp7j2xvxot.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -405255,13 +405255,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.604,
+          "synth_time_s": 1.676,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp64vvh54uFmaa.mlir",
+              "from": "tmp3m2b21rrFmaa.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -405372,7 +405372,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmph2o1oiq4.synth.mlir",
+              "to": "tmp5k05c1l8.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -405390,13 +405390,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.241,
+          "synth_time_s": 1.273,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmptoitdottFmaSgn.mlir",
+              "from": "tmpi2_adiplFmaSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -405507,7 +405507,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpn9xn_34v.synth.mlir",
+              "to": "tmpg7nynfcy.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -405525,13 +405525,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.342,
+          "synth_time_s": 1.363,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp_qqpa4bxMulAddUns.mlir",
+              "from": "tmpxr4iwxciMulAddUns.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -405642,7 +405642,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpioqcgzso.synth.mlir",
+              "to": "tmpo1x9l8ys.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -405660,13 +405660,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 0.961,
+          "synth_time_s": 0.918,
           "tv_status": "error",
           "tv_total": 24,
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmp66ssx_hySqrSgn.mlir",
+              "from": "tmpx9ewbyj0SqrSgn.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -405782,7 +405782,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmptp2tziji.synth.mlir",
+              "to": "tmp3omus0ry.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -405800,13 +405800,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "DatapathBench",
-          "synth_time_s": 1.42,
+          "synth_time_s": 1.443,
           "tv_status": "error",
           "tv_total": 24,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp0rkdf7qiMulThree.mlir",
+              "from": "tmp7d3jdxfxMulThree.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -405922,7 +405922,7 @@
             },
             {
               "from": "0_22_synth-structural-hash.mlir",
-              "to": "tmp1kvma58h.synth.mlir",
+              "to": "tmptzsra3xl.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -405940,13 +405940,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.056,
+          "synth_time_s": 0.06,
           "tv_status": "pass",
           "tv_total": 17,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpjto47szqsub.mlir",
+              "from": "tmpxnzgjl5qsub.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -406027,7 +406027,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpc2fvybu6.synth.mlir",
+              "to": "tmp7zzxmwgs.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -406051,7 +406051,7 @@
           "tv_verified": 5,
           "tv_results": [
             {
-              "from": "tmpvowx4w5jparity.mlir",
+              "from": "tmpef73a05dparity.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -406072,7 +406072,7 @@
             },
             {
               "from": "0_3_canonicalize.mlir",
-              "to": "tmpy7zs0x3f.synth.mlir",
+              "to": "tmp2y729mt7.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -406090,13 +406090,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.109,
+          "synth_time_s": 0.106,
           "tv_status": "error",
           "tv_total": 18,
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmp9cc2b8eqalu.mlir",
+              "from": "tmpqg90e4v5alu.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "error"
             },
@@ -406182,7 +406182,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmp_b_e_z17.synth.mlir",
+              "to": "tmp7xzwcrzx.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -406200,13 +406200,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.055,
+          "synth_time_s": 0.057,
           "tv_status": "pass",
           "tv_total": 13,
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmpnox3kwheadd.mlir",
+              "from": "tmp3448vfyfadd.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -406267,7 +406267,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmpyok8088j.synth.mlir",
+              "to": "tmpesdvfenw.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -406285,13 +406285,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.059,
+          "synth_time_s": 0.058,
           "tv_status": "pass",
           "tv_total": 11,
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpmp7mhm_qbarrel_shifter.mlir",
+              "from": "tmp92ex0qozbarrel_shifter.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -406342,7 +406342,7 @@
             },
             {
               "from": "0_9_canonicalize.mlir",
-              "to": "tmpe3dj9k11.synth.mlir",
+              "to": "tmpp8t1695x.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -406360,13 +406360,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.051,
+          "synth_time_s": 0.053,
           "tv_status": "error",
           "tv_total": 9,
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmpw97551bpmux.mlir",
+              "from": "tmp7amvj__1mux.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "error"
             },
@@ -406407,7 +406407,7 @@
             },
             {
               "from": "0_7_synth-structural-hash.mlir",
-              "to": "tmp1pt8v645.synth.mlir",
+              "to": "tmprhpbn6n7.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -406425,13 +406425,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.067,
+          "synth_time_s": 0.066,
           "tv_status": "pass",
           "tv_total": 12,
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmph3aiywpocomparator.mlir",
+              "from": "tmpd_r3dg9hcomparator.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -406487,7 +406487,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmpwhi_ho8c.synth.mlir",
+              "to": "tmpl3j677jx.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -406505,13 +406505,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.207,
+          "synth_time_s": 0.199,
           "tv_status": "error",
           "tv_total": 21,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpaytfdwyfmul.mlir",
+              "from": "tmpc2xj5d86mul.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -406612,7 +406612,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmp42tx6exf.synth.mlir",
+              "to": "tmpzxkox090.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -406636,7 +406636,7 @@
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmpd878ep3uicmp.mlir",
+              "from": "tmp16k0x8tficmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -406697,7 +406697,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmp3b4_afzx.synth.mlir",
+              "to": "tmp6ft0jmkt.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -406715,13 +406715,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.102,
+          "synth_time_s": 0.099,
           "tv_status": "pass",
           "tv_total": 12,
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmpx2bull7_comparator.mlir",
+              "from": "tmp1d_yuko9comparator.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -406777,7 +406777,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmpod3lu2v_.synth.mlir",
+              "to": "tmp4qhl4erz.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -406795,13 +406795,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 1.295,
+          "synth_time_s": 1.236,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpw0z3azb3mul.mlir",
+              "from": "tmpi48r6a2bmul.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -406912,7 +406912,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp7iikjhjw.synth.mlir",
+              "to": "tmpuqy7eiw8.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -406930,13 +406930,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.103,
+          "synth_time_s": 0.1,
           "tv_status": "pass",
           "tv_total": 15,
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpcxq2au47barrel_shifter.mlir",
+              "from": "tmpcez8vb_xbarrel_shifter.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -407007,7 +407007,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmp0gwbhlvs.synth.mlir",
+              "to": "tmp6x7sipxh.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -407025,13 +407025,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.062,
+          "synth_time_s": 0.063,
           "tv_status": "error",
           "tv_total": 9,
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmp2q10b5z4mux.mlir",
+              "from": "tmppxeud__vmux.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "error"
             },
@@ -407072,7 +407072,7 @@
             },
             {
               "from": "0_7_synth-structural-hash.mlir",
-              "to": "tmp26m3uby1.synth.mlir",
+              "to": "tmpfdlws0ku.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -407090,13 +407090,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.269,
+          "synth_time_s": 0.251,
           "tv_status": "error",
           "tv_total": 18,
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpnch43lklalu.mlir",
+              "from": "tmpy82eyusdalu.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "error"
             },
@@ -407182,7 +407182,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpgqm1_vdd.synth.mlir",
+              "to": "tmpvqob_hf_.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -407200,13 +407200,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.116,
+          "synth_time_s": 0.111,
           "tv_status": "pass",
           "tv_total": 17,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpv95grm0lsub.mlir",
+              "from": "tmpcypi7y7zsub.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -407287,7 +407287,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmph7qh5xdg.synth.mlir",
+              "to": "tmp5by7kpal.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -407305,13 +407305,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.108,
+          "synth_time_s": 0.104,
           "tv_status": "pass",
           "tv_total": 13,
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmpjtouil16add.mlir",
+              "from": "tmpuipi3wjladd.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -407372,7 +407372,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmp7ts7qcy2.synth.mlir",
+              "to": "tmpic79wjeu.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -407390,13 +407390,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.047,
+          "synth_time_s": 0.048,
           "tv_status": "pass",
           "tv_total": 6,
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpf7gcwosmparity.mlir",
+              "from": "tmpzvm9q7noparity.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -407422,7 +407422,7 @@
             },
             {
               "from": "0_4_synth-structural-hash.mlir",
-              "to": "tmp0d6vk4qm.synth.mlir",
+              "to": "tmp8pv30g1l.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -407440,13 +407440,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "microbenchmarks",
-          "synth_time_s": 0.151,
+          "synth_time_s": 0.145,
           "tv_status": "pass",
           "tv_total": 13,
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmp9cl63ct2icmp.mlir",
+              "from": "tmpvnkrdjl_icmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -407507,7 +407507,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmp2rvveo6a.synth.mlir",
+              "to": "tmphnvp7i3a.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -407525,13 +407525,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.059,
+          "synth_time_s": 0.061,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp964go12wSumZeroDet.test.tmp.mlir",
+              "from": "tmp88esrvhhSumZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -407607,7 +407607,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpz6h9xkgn.synth.mlir",
+              "to": "tmp7ye3zczi.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -407625,13 +407625,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.106,
+          "synth_time_s": 0.104,
           "tv_status": "pass",
           "tv_total": 22,
           "tv_verified": 22,
           "tv_results": [
             {
-              "from": "tmpdxwbto0hAddSubV.test.tmp.mlir",
+              "from": "tmpt9ig13rjAddSubV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -407737,7 +407737,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpsrnen5xf.synth.mlir",
+              "to": "tmpeq03bd5d.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -407755,13 +407755,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.079,
+          "synth_time_s": 0.075,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp8ikeb86xAddV.test.tmp.mlir",
+              "from": "tmp_v6gz80gAddV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -407837,7 +407837,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmp6j23a1c5.synth.mlir",
+              "to": "tmp32ffdeu7.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -407855,13 +407855,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.066,
+          "synth_time_s": 0.068,
           "tv_status": "pass",
           "tv_total": 17,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpx4e8vu2eSubC.test.tmp.mlir",
+              "from": "tmpl6f5e2ilSubC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -407942,7 +407942,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmp2o44z10r.synth.mlir",
+              "to": "tmpveu35etk.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -407966,7 +407966,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpd6fa9y5bIncDec.test.tmp.mlir",
+              "from": "tmp3q17_fghIncDec.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -408042,7 +408042,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpbck9dbtj.synth.mlir",
+              "to": "tmpei9z1t0c.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408060,13 +408060,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.062,
+          "synth_time_s": 0.06,
           "tv_status": "pass",
           "tv_total": 15,
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpr_leactiAddCfast.test.tmp.mlir",
+              "from": "tmp1c_w17vqAddCfast.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -408137,7 +408137,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpuv415p56.synth.mlir",
+              "to": "tmpn08fjv74.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408155,13 +408155,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.049,
+          "synth_time_s": 0.051,
           "tv_status": "pass",
           "tv_total": 12,
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmpibxyztskInc.test.tmp.mlir",
+              "from": "tmplb4jdsqqInc.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -408217,7 +408217,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmpeerfmred.synth.mlir",
+              "to": "tmpaschxtk0.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408235,13 +408235,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.054,
+          "synth_time_s": 0.055,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpwadqs58qNeg.test.tmp.mlir",
+              "from": "tmpwxthahxyNeg.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -408317,7 +408317,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpwhhf0yiz.synth.mlir",
+              "to": "tmp0kd_4b8e.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408335,13 +408335,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.073,
+          "synth_time_s": 0.074,
           "tv_status": "pass",
           "tv_total": 15,
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpze39co9gAddMod2Nm1s0.test.tmp.mlir",
+              "from": "tmp867bzmjfAddMod2Nm1s0.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -408412,7 +408412,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpckhkd9zs.synth.mlir",
+              "to": "tmpd_la6q2f.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408430,13 +408430,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.055,
+          "synth_time_s": 0.056,
           "tv_status": "pass",
           "tv_total": 17,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpms7c7sd4NegC.test.tmp.mlir",
+              "from": "tmpbhen55j2NegC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -408517,7 +408517,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpt_0_e0tt.synth.mlir",
+              "to": "tmphw9a04jo.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408535,13 +408535,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.055,
+          "synth_time_s": 0.058,
           "tv_status": "pass",
           "tv_total": 7,
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmp_qd2pl03Gray2Bin.test.tmp.mlir",
+              "from": "tmp80dt8adwGray2Bin.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -408572,7 +408572,7 @@
             },
             {
               "from": "0_5_synth-structural-hash.mlir",
-              "to": "tmp8zfrs_5w.synth.mlir",
+              "to": "tmpyfxczq20.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408590,13 +408590,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.134,
+          "synth_time_s": 0.131,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpo6yoe673MulAddUns.test.tmp.mlir",
+              "from": "tmpn4tf81amMulAddUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -408702,7 +408702,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp_kscda54.synth.mlir",
+              "to": "tmpa340b7rn.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408720,13 +408720,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.045,
+          "synth_time_s": 0.049,
           "tv_status": "pass",
           "tv_total": 6,
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpignzyo9pBin2Gray.test.tmp.mlir",
+              "from": "tmpxqehae8wBin2Gray.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -408752,7 +408752,7 @@
             },
             {
               "from": "0_4_canonicalize.mlir",
-              "to": "tmpsj5pxpr1.synth.mlir",
+              "to": "tmpq66la6w3.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408770,13 +408770,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.045,
+          "synth_time_s": 0.046,
           "tv_status": "pass",
           "tv_total": 4,
           "tv_verified": 4,
           "tv_results": [
             {
-              "from": "tmp6f85az20RedXor.test.tmp.mlir",
+              "from": "tmpc_5oz7wwRedXor.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -408792,7 +408792,7 @@
             },
             {
               "from": "0_2_convert-comb-to-synth.mlir",
-              "to": "tmpqdkt9d3a.synth.mlir",
+              "to": "tmpqmiht6wx.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408810,13 +408810,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.046,
+          "synth_time_s": 0.056,
           "tv_status": "pass",
           "tv_total": 8,
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmp8oubqynaRedAnd.test.tmp.mlir",
+              "from": "tmpprzku0ybRedAnd.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -408852,7 +408852,7 @@
             },
             {
               "from": "0_6_synth-lower-variadic.mlir",
-              "to": "tmp5wpbjuhr.synth.mlir",
+              "to": "tmpuyridvi3.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408870,13 +408870,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.072,
+          "synth_time_s": 0.071,
           "tv_status": "pass",
           "tv_total": 18,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpijobt3h5AddSub.test.tmp.mlir",
+              "from": "tmpwb5mod9_AddSub.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -408962,7 +408962,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpkn1o_ajl.synth.mlir",
+              "to": "tmppe7_qrth.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -408980,13 +408980,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.086,
+          "synth_time_s": 0.084,
           "tv_status": "pass",
           "tv_total": 20,
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpvcxaq10xAddSubC.test.tmp.mlir",
+              "from": "tmp_qko0010AddSubC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -409082,7 +409082,7 @@
             },
             {
               "from": "0_18_synth-structural-hash.mlir",
-              "to": "tmpxad_4qpy.synth.mlir",
+              "to": "tmp0g267k_x.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -409106,7 +409106,7 @@
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmp043cwvftLeadSignDet.test.tmp.mlir",
+              "from": "tmp0gty6drjLeadSignDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -409172,7 +409172,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmp6ga9lizj.synth.mlir",
+              "to": "tmpoddo08cx.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -409190,13 +409190,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.207,
+          "synth_time_s": 0.201,
           "tv_status": "error",
           "tv_total": 21,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp22p0zpjoMulUns.test.tmp.mlir",
+              "from": "tmpyajnhu44MulUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -409297,7 +409297,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmp1j2fas4b.synth.mlir",
+              "to": "tmpfmqk0f3z.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -409315,13 +409315,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.054,
+          "synth_time_s": 0.053,
           "tv_status": "pass",
           "tv_total": 13,
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmpth5zje2sDec.test.tmp.mlir",
+              "from": "tmpxpjt_gaiDec.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -409382,7 +409382,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmpujk_qhas.synth.mlir",
+              "to": "tmpu72t02op.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -409400,13 +409400,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.074,
+          "synth_time_s": 0.072,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmpmpu_jibnAddMop.test.tmp.mlir",
+              "from": "tmp_sw2c5c4AddMop.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -409482,7 +409482,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmp9mz6bac_.synth.mlir",
+              "to": "tmphl_ph_02.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -409500,13 +409500,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.06,
+          "synth_time_s": 0.061,
           "tv_status": "pass",
           "tv_total": 15,
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmp36rpec80AddC.test.tmp.mlir",
+              "from": "tmp6fjau1zhAddC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -409577,7 +409577,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmp5z38l2b1.synth.mlir",
+              "to": "tmpga1ay1tr.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -409601,7 +409601,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpf8482_9qSub.test.tmp.mlir",
+              "from": "tmpv2thsctcSub.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -409682,7 +409682,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpr9crcu48.synth.mlir",
+              "to": "tmpa2yl9qlk.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -409700,13 +409700,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.049,
+          "synth_time_s": 0.051,
           "tv_status": "pass",
           "tv_total": 10,
           "tv_verified": 10,
           "tv_results": [
             {
-              "from": "tmp4ec37wzpLog2.test.tmp.mlir",
+              "from": "tmps0fexd0dLog2.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -409752,7 +409752,7 @@
             },
             {
               "from": "0_8_synth-structural-hash.mlir",
-              "to": "tmplaijwiz3.synth.mlir",
+              "to": "tmpigvpkq3v.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -409770,13 +409770,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.046,
+          "synth_time_s": 0.048,
           "tv_status": "pass",
           "tv_total": 6,
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmp78gjxq22AllZeroDet.test.tmp.mlir",
+              "from": "tmprqdf3awjAllZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -409802,7 +409802,7 @@
             },
             {
               "from": "0_4_synth-lower-variadic.mlir",
-              "to": "tmpwru6a57x.synth.mlir",
+              "to": "tmp90wk1m55.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -409820,13 +409820,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.208,
+          "synth_time_s": 0.201,
           "tv_status": "error",
           "tv_total": 21,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp0q2c7wngMulSgn.test.tmp.mlir",
+              "from": "tmp5jgqgf3hMulSgn.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -409927,7 +409927,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmp1qnp9psx.synth.mlir",
+              "to": "tmptnri9l4w.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -409945,13 +409945,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.05,
+          "synth_time_s": 0.053,
           "tv_status": "pass",
           "tv_total": 11,
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmp9189ww31IncC.test.tmp.mlir",
+              "from": "tmpj695tqy3IncC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -410002,7 +410002,7 @@
             },
             {
               "from": "0_9_synth-structural-hash.mlir",
-              "to": "tmptpzcgonp.synth.mlir",
+              "to": "tmp_kd4toxu.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410026,7 +410026,7 @@
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmpaalo9fr4CmpGE.test.tmp.mlir",
+              "from": "tmpaxpxr8v8CmpGE.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -410062,7 +410062,7 @@
             },
             {
               "from": "0_6_synth-structural-hash.mlir",
-              "to": "tmp_o06jlmi.synth.mlir",
+              "to": "tmpu7ule8fg.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410080,13 +410080,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.048,
+          "synth_time_s": 0.047,
           "tv_status": "pass",
           "tv_total": 7,
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmp0jakm2kiCmpEQ.test.tmp.mlir",
+              "from": "tmposf2oydvCmpEQ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -410117,7 +410117,7 @@
             },
             {
               "from": "0_5_synth-lower-variadic.mlir",
-              "to": "tmp9kj9txca.synth.mlir",
+              "to": "tmpfa7ytekm.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410135,13 +410135,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.068,
+          "synth_time_s": 0.065,
           "tv_status": "pass",
           "tv_total": 18,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpir074zizSubCZ.test.tmp.mlir",
+              "from": "tmpw08_sl1zSubCZ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -410227,7 +410227,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpp75p57eh.synth.mlir",
+              "to": "tmp2pnaa7vr.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410251,7 +410251,7 @@
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmpv_231kw2FullAdder.test.tmp.mlir",
+              "from": "tmpzwricuo0FullAdder.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -410282,7 +410282,7 @@
             },
             {
               "from": "0_5_synth-structural-hash.mlir",
-              "to": "tmpf3a7876v.synth.mlir",
+              "to": "tmpufbbmfyh.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410300,13 +410300,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.044,
+          "synth_time_s": 0.048,
           "tv_status": "pass",
           "tv_total": 6,
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpxyutq04kRedOr.test.tmp.mlir",
+              "from": "tmp00kg51htRedOr.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -410332,7 +410332,7 @@
             },
             {
               "from": "0_4_synth-lower-variadic.mlir",
-              "to": "tmp_p65te38.synth.mlir",
+              "to": "tmpregi95ix.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410356,7 +410356,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp7g0f5rvcAbsVal.test.tmp.mlir",
+              "from": "tmpsil8kjarAbsVal.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -410437,7 +410437,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpyp5826zd.synth.mlir",
+              "to": "tmpshlktt3g.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410455,13 +410455,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.055,
+          "synth_time_s": 0.054,
           "tv_status": "pass",
           "tv_total": 12,
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmpmjv3bc0rCmpEQGE.test.tmp.mlir",
+              "from": "tmpjp_54g1_CmpEQGE.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -410517,7 +410517,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmpapehqy5w.synth.mlir",
+              "to": "tmpuw4k84qs.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410535,13 +410535,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.061,
+          "synth_time_s": 0.062,
           "tv_status": "pass",
           "tv_total": 14,
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmpa3e69jnlLeadOneDet.test.tmp.mlir",
+              "from": "tmp6kwhurawLeadOneDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -410607,7 +410607,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmpj8akr1my.synth.mlir",
+              "to": "tmpx1ffpdh1.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410625,13 +410625,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.056,
+          "synth_time_s": 0.059,
           "tv_status": "pass",
           "tv_total": 11,
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpfndn1qfqDecode.test.tmp.mlir",
+              "from": "tmpen1qah9vDecode.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -410682,7 +410682,7 @@
             },
             {
               "from": "0_9_canonicalize.mlir",
-              "to": "tmp5e7urlmh.synth.mlir",
+              "to": "tmpj7nusd1m.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410700,13 +410700,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.066,
+          "synth_time_s": 0.071,
           "tv_status": "pass",
           "tv_total": 17,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpzrglnyb8IncDecC.test.tmp.mlir",
+              "from": "tmplbvm2zu5IncDecC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -410787,7 +410787,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpikksitwz.synth.mlir",
+              "to": "tmpbow5bmhx.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410805,13 +410805,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.055,
+          "synth_time_s": 0.051,
           "tv_status": "pass",
           "tv_total": 11,
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmprrdv7jthAddCsv.test.tmp.mlir",
+              "from": "tmpaz5a7u2xAddCsv.test.tmp.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -410862,7 +410862,7 @@
             },
             {
               "from": "0_9_synth-structural-hash.mlir",
-              "to": "tmpyvijr7jw.synth.mlir",
+              "to": "tmplvpvptgw.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410880,13 +410880,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.083,
+          "synth_time_s": 0.089,
           "tv_status": "pass",
           "tv_total": 18,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpnd13eg2_SubVZ.test.tmp.mlir",
+              "from": "tmpucekbw40SubVZ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -410972,7 +410972,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpjb2cil9r.synth.mlir",
+              "to": "tmp775yd8s6.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -410990,13 +410990,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.045,
+          "synth_time_s": 0.046,
           "tv_status": "pass",
           "tv_total": 8,
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmpg5e9601aAllOneDet.test.tmp.mlir",
+              "from": "tmpuc3a39q4AllOneDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -411032,7 +411032,7 @@
             },
             {
               "from": "0_6_synth-lower-variadic.mlir",
-              "to": "tmp30ya0k6m.synth.mlir",
+              "to": "tmppofdsrbz.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -411050,13 +411050,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.075,
+          "synth_time_s": 0.068,
           "tv_status": "pass",
           "tv_total": 14,
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmpkp6l1a7vAddMod2Nm1.test.tmp.mlir",
+              "from": "tmph6_qn_3bAddMod2Nm1.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -411122,7 +411122,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmphycm0z03.synth.mlir",
+              "to": "tmpz4n6upmx.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -411140,13 +411140,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.084,
+          "synth_time_s": 0.082,
           "tv_status": "pass",
           "tv_total": 17,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpkxrs0_y8SubV.test.tmp.mlir",
+              "from": "tmp3fq0g_j0SubV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -411227,7 +411227,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmp5o1rs2xd.synth.mlir",
+              "to": "tmpjxxntnvr.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -411245,13 +411245,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.06,
+          "synth_time_s": 0.062,
           "tv_status": "pass",
           "tv_total": 14,
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmphfqgdobuLeadZeroDet.test.tmp.mlir",
+              "from": "tmp_9oklrzpLeadZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -411317,7 +411317,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmpl6zn5i_f.synth.mlir",
+              "to": "tmpu1mv0gna.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -411335,13 +411335,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.055,
+          "synth_time_s": 0.058,
           "tv_status": "pass",
           "tv_total": 14,
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmp11ad02r5DecC.test.tmp.mlir",
+              "from": "tmpivnvo3bcDecC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -411407,7 +411407,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmp5a0sa7j5.synth.mlir",
+              "to": "tmpy7tuja90.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -411425,13 +411425,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.057,
+          "synth_time_s": 0.058,
           "tv_status": "pass",
           "tv_total": 13,
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmpxzbzt3biAdd.test.tmp.mlir",
+              "from": "tmpav3lgd05Add.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -411492,7 +411492,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmppkrk1gst.synth.mlir",
+              "to": "tmp01si25j6.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -411510,13 +411510,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.133,
+          "synth_time_s": 0.13,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmph9kz4e90MulAddSgn.test.tmp.mlir",
+              "from": "tmpfo6qdt_cMulAddSgn.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -411622,7 +411622,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmplfq61vsr.synth.mlir",
+              "to": "tmp6stj3lu5.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -411646,7 +411646,7 @@
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmp4kv14norCnt.test.tmp.mlir",
+              "from": "tmpw_if9czhCnt.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -411712,7 +411712,7 @@
             },
             {
               "from": "0_12_synth-lower-variadic.mlir",
-              "to": "tmpfrm9v15o.synth.mlir",
+              "to": "tmpqamy08u1.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -411730,13 +411730,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.261,
+          "synth_time_s": 0.245,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmp3miamconAddMulUns.test.tmp.mlir",
+              "from": "tmpzzhg3ti_AddMulUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -411847,7 +411847,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmppqbk4eto.synth.mlir",
+              "to": "tmpv1t21roq.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -411865,13 +411865,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.047,
+          "synth_time_s": 0.053,
           "tv_status": "pass",
           "tv_total": 8,
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmp9u497v66AllOneDet.test.tmp.mlir",
+              "from": "tmpu4jg0qb8AllOneDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -411907,7 +411907,7 @@
             },
             {
               "from": "0_6_synth-lower-variadic.mlir",
-              "to": "tmpakvnct5m.synth.mlir",
+              "to": "tmpn_kels6i.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -411925,13 +411925,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.156,
+          "synth_time_s": 0.148,
           "tv_status": "pass",
           "tv_total": 18,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp7n_zy675SubCZ.test.tmp.mlir",
+              "from": "tmp5qhe0occSubCZ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -412017,7 +412017,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpg2n_dptc.synth.mlir",
+              "to": "tmp1pzg8m4s.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -412035,13 +412035,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.164,
+          "synth_time_s": 0.156,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp755638xrAddMop.test.tmp.mlir",
+              "from": "tmprrlh2j0zAddMop.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -412117,7 +412117,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmp0l1vgawv.synth.mlir",
+              "to": "tmp4vpyxzuu.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -412135,13 +412135,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.107,
+          "synth_time_s": 0.106,
           "tv_status": "pass",
           "tv_total": 13,
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmph5i6pw1yAdd.test.tmp.mlir",
+              "from": "tmpzzxlntvqAdd.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -412202,7 +412202,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmpdfb7yz0h.synth.mlir",
+              "to": "tmpc19q3tga.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -412220,13 +412220,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.649,
+          "synth_time_s": 0.607,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmp8jtdfgxvMulAddUns.test.tmp.mlir",
+              "from": "tmplulovcpaMulAddUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -412337,7 +412337,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpy3yxsg3s.synth.mlir",
+              "to": "tmpepr7ux41.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -412355,13 +412355,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.077,
+          "synth_time_s": 0.076,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp1oxotqgeNeg.test.tmp.mlir",
+              "from": "tmp15yzs9ckNeg.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -412437,7 +412437,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpe80yd07_.synth.mlir",
+              "to": "tmpirre7qp6.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -412455,13 +412455,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.135,
+          "synth_time_s": 0.14,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmppldfrzkaIncDec.test.tmp.mlir",
+              "from": "tmpalsj5zlnIncDec.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -412537,7 +412537,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpsmwionhj.synth.mlir",
+              "to": "tmp2ot4dr5b.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -412555,13 +412555,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.103,
+          "synth_time_s": 0.097,
           "tv_status": "pass",
           "tv_total": 14,
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmpdy2isykkDecC.test.tmp.mlir",
+              "from": "tmp5rh4jlhsDecC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -412627,7 +412627,7 @@
             },
             {
               "from": "0_12_synth-structural-hash.mlir",
-              "to": "tmpsvbkgzsl.synth.mlir",
+              "to": "tmprhqw9e3x.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -412645,13 +412645,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.072,
+          "synth_time_s": 0.067,
           "tv_status": "pass",
           "tv_total": 15,
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmppn8m9j_1Decode.test.tmp.mlir",
+              "from": "tmpqvibjwgyDecode.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -412722,7 +412722,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpicecp6gq.synth.mlir",
+              "to": "tmpgt19jabt.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -412740,13 +412740,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.177,
+          "synth_time_s": 0.161,
           "tv_status": "pass",
           "tv_total": 17,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpqjdxcd6iSubV.test.tmp.mlir",
+              "from": "tmpgpo_pf0mSubV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -412827,7 +412827,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpa1quul5q.synth.mlir",
+              "to": "tmpenp2ysvd.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -412845,13 +412845,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.192,
+          "synth_time_s": 0.182,
           "tv_status": "pass",
           "tv_total": 18,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpg6xksy5sAddSub.test.tmp.mlir",
+              "from": "tmp09099c71AddSub.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -412937,7 +412937,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpu0wte3q6.synth.mlir",
+              "to": "tmpp91ryp9t.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -412955,13 +412955,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.088,
+          "synth_time_s": 0.081,
           "tv_status": "pass",
           "tv_total": 17,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmplg1apz5pNegC.test.tmp.mlir",
+              "from": "tmp1jjn9_20NegC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -413042,7 +413042,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpmr8phj9p.synth.mlir",
+              "to": "tmpj7trr0cg.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -413066,7 +413066,7 @@
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmprnuesraaSubC.test.tmp.mlir",
+              "from": "tmppjpkgsxiSubC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -413147,7 +413147,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmp0la_n9ba.synth.mlir",
+              "to": "tmp5cdzsll8.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -413165,13 +413165,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.067,
+          "synth_time_s": 0.07,
           "tv_status": "pass",
           "tv_total": 12,
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmp1vzrft49Log2.test.tmp.mlir",
+              "from": "tmp4s9qxd3gLog2.test.tmp.mlir",
               "to": "0_0_comb-balance-mux.mlir",
               "status": "equiv"
             },
@@ -413227,7 +413227,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmp06qzqah6.synth.mlir",
+              "to": "tmpw82zigdg.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -413245,13 +413245,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.117,
+          "synth_time_s": 0.108,
           "tv_status": "pass",
           "tv_total": 17,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp4uzoz6_5Sub.test.tmp.mlir",
+              "from": "tmp7rwkn_vfSub.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -413332,7 +413332,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpa9b8di4n.synth.mlir",
+              "to": "tmp_cpatwlp.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -413350,13 +413350,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.054,
+          "synth_time_s": 0.055,
           "tv_status": "pass",
           "tv_total": 14,
           "tv_verified": 14,
           "tv_results": [
             {
-              "from": "tmpdboie32gCnt.test.tmp.mlir",
+              "from": "tmpaf8zf_usCnt.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -413422,7 +413422,7 @@
             },
             {
               "from": "0_12_synth-lower-variadic.mlir",
-              "to": "tmp96pv5tft.synth.mlir",
+              "to": "tmp_qc63sq7.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -413440,13 +413440,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.654,
+          "synth_time_s": 0.613,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 19,
           "tv_results": [
             {
-              "from": "tmp9o4xgf_qMulAddSgn.test.tmp.mlir",
+              "from": "tmpf89dn1nyMulAddSgn.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -413557,7 +413557,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmp050j8x52.synth.mlir",
+              "to": "tmpj9uj0jbu.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -413575,13 +413575,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.156,
+          "synth_time_s": 0.154,
           "tv_status": "pass",
           "tv_total": 15,
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmp3psszyp3AddMod2Nm1.test.tmp.mlir",
+              "from": "tmpcp45cl_jAddMod2Nm1.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -413652,7 +413652,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpcvr0z89t.synth.mlir",
+              "to": "tmphmqbitxd.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -413670,13 +413670,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.101,
+          "synth_time_s": 0.1,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp985og6dlLeadOneDet.test.tmp.mlir",
+              "from": "tmpr_iyncseLeadOneDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -413752,7 +413752,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpfw4eb83_.synth.mlir",
+              "to": "tmp2u0a49cy.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -413770,13 +413770,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 1.264,
+          "synth_time_s": 1.193,
           "tv_status": "error",
           "tv_total": 23,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmp39g7vgfcMulUns.test.tmp.mlir",
+              "from": "tmp1ob2y96cMulUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -413887,7 +413887,7 @@
             },
             {
               "from": "0_21_synth-structural-hash.mlir",
-              "to": "tmpkhdkbfai.synth.mlir",
+              "to": "tmpnqm9h_3i.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -413905,13 +413905,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.121,
+          "synth_time_s": 0.113,
           "tv_status": "pass",
           "tv_total": 15,
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmpff599er8AddCfast.test.tmp.mlir",
+              "from": "tmpmf8m5ukrAddCfast.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -413982,7 +413982,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpfvb5skjd.synth.mlir",
+              "to": "tmp1yzh0f_7.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -414000,13 +414000,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.132,
+          "synth_time_s": 0.133,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp6o7l6043AddV.test.tmp.mlir",
+              "from": "tmpu5ajbrqzAddV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -414082,7 +414082,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpk1dn67_b.synth.mlir",
+              "to": "tmpvgwh1kj4.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -414100,13 +414100,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.047,
+          "synth_time_s": 0.051,
           "tv_status": "pass",
           "tv_total": 6,
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpf8chqg40Bin2Gray.test.tmp.mlir",
+              "from": "tmpsziahhmuBin2Gray.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -414132,7 +414132,7 @@
             },
             {
               "from": "0_4_canonicalize.mlir",
-              "to": "tmplesn0mvt.synth.mlir",
+              "to": "tmpgpiop_hu.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -414150,13 +414150,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.071,
+          "synth_time_s": 0.074,
           "tv_status": "pass",
           "tv_total": 11,
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpwziwr_y1IncC.test.tmp.mlir",
+              "from": "tmpnibriw5qIncC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -414207,7 +414207,7 @@
             },
             {
               "from": "0_9_synth-structural-hash.mlir",
-              "to": "tmpezpnf_3r.synth.mlir",
+              "to": "tmphalqb9nk.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -414225,13 +414225,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.118,
+          "synth_time_s": 0.115,
           "tv_status": "pass",
           "tv_total": 15,
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmp6kp9xlo_AddC.test.tmp.mlir",
+              "from": "tmp2jiprg0jAddC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -414302,7 +414302,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpl0potaul.synth.mlir",
+              "to": "tmp1r3cnwlp.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -414320,13 +414320,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.083,
+          "synth_time_s": 0.088,
           "tv_status": "pass",
           "tv_total": 17,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpe8jpioy5AbsVal.test.tmp.mlir",
+              "from": "tmp10rl5l66AbsVal.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -414407,7 +414407,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmp_h7xqcqi.synth.mlir",
+              "to": "tmpb1l7ne8s.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -414425,13 +414425,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.165,
+          "synth_time_s": 0.15,
           "tv_status": "pass",
           "tv_total": 15,
           "tv_verified": 15,
           "tv_results": [
             {
-              "from": "tmphx6yla87AddMod2Nm1s0.test.tmp.mlir",
+              "from": "tmpotiv0umnAddMod2Nm1s0.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -414502,7 +414502,7 @@
             },
             {
               "from": "0_13_synth-structural-hash.mlir",
-              "to": "tmpzeucm4cu.synth.mlir",
+              "to": "tmphnakobla.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -414526,7 +414526,7 @@
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmpq8ohzc56Gray2Bin.test.tmp.mlir",
+              "from": "tmp1xkuibf9Gray2Bin.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -414557,7 +414557,7 @@
             },
             {
               "from": "0_5_synth-structural-hash.mlir",
-              "to": "tmpn3qg0e_y.synth.mlir",
+              "to": "tmpzgh17_ss.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -414575,13 +414575,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 1.331,
+          "synth_time_s": 1.238,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmpqrseinhkAddMulUns.test.tmp.mlir",
+              "from": "tmpvc4i7mvrAddMulUns.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -414687,7 +414687,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmp_19m953p.synth.mlir",
+              "to": "tmpze0su__l.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -414705,13 +414705,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 1.215,
+          "synth_time_s": 1.144,
           "tv_status": "error",
           "tv_total": 22,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp70sd2rheMulSgn.test.tmp.mlir",
+              "from": "tmpwflkjakkMulSgn.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -414817,7 +414817,7 @@
             },
             {
               "from": "0_20_synth-structural-hash.mlir",
-              "to": "tmpes6pfji6.synth.mlir",
+              "to": "tmpk8sfdnql.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -414835,13 +414835,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.169,
+          "synth_time_s": 0.168,
           "tv_status": "pass",
           "tv_total": 18,
           "tv_verified": 18,
           "tv_results": [
             {
-              "from": "tmpdjuws3r2SubVZ.test.tmp.mlir",
+              "from": "tmphie31geuSubVZ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -414927,7 +414927,7 @@
             },
             {
               "from": "0_16_synth-structural-hash.mlir",
-              "to": "tmpjk9dguld.synth.mlir",
+              "to": "tmp8l6hn6qz.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -414945,13 +414945,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.093,
+          "synth_time_s": 0.094,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp0d6njei0LeadZeroDet.test.tmp.mlir",
+              "from": "tmp0bpvc6acLeadZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -415027,7 +415027,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmppfkdzvn6.synth.mlir",
+              "to": "tmpq5bb12p6.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415045,13 +415045,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.049,
+          "synth_time_s": 0.055,
           "tv_status": "pass",
           "tv_total": 5,
           "tv_verified": 5,
           "tv_results": [
             {
-              "from": "tmp4rtejs0_RedXor.test.tmp.mlir",
+              "from": "tmpw74ky79nRedXor.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -415072,7 +415072,7 @@
             },
             {
               "from": "0_3_synth-structural-hash.mlir",
-              "to": "tmpy_ktuf1y.synth.mlir",
+              "to": "tmpcppa08fr.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415090,13 +415090,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.073,
+          "synth_time_s": 0.071,
           "tv_status": "pass",
           "tv_total": 11,
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmptm3qnwgyCmpEQGE.test.tmp.mlir",
+              "from": "tmpy46wgkomCmpEQGE.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -415147,7 +415147,7 @@
             },
             {
               "from": "0_9_synth-structural-hash.mlir",
-              "to": "tmphi99u2v8.synth.mlir",
+              "to": "tmpumwkm2uf.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415171,7 +415171,7 @@
           "tv_verified": 11,
           "tv_results": [
             {
-              "from": "tmpb5gnqbl1AddCsv.test.tmp.mlir",
+              "from": "tmpx3m2ki1sAddCsv.test.tmp.mlir",
               "to": "0_0_synth-lower-variadic.mlir",
               "status": "equiv"
             },
@@ -415222,7 +415222,7 @@
             },
             {
               "from": "0_9_synth-structural-hash.mlir",
-              "to": "tmp8kwhrs4m.synth.mlir",
+              "to": "tmphcupd5wz.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415240,13 +415240,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.048,
+          "synth_time_s": 0.049,
           "tv_status": "pass",
           "tv_total": 8,
           "tv_verified": 8,
           "tv_results": [
             {
-              "from": "tmpgfuzfk3xRedAnd.test.tmp.mlir",
+              "from": "tmp_js86kseRedAnd.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -415282,7 +415282,7 @@
             },
             {
               "from": "0_6_synth-lower-variadic.mlir",
-              "to": "tmpu9klpxbg.synth.mlir",
+              "to": "tmpzevunak4.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415300,13 +415300,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.052,
+          "synth_time_s": 0.053,
           "tv_status": "pass",
           "tv_total": 7,
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmp56qh9d_hCmpEQ.test.tmp.mlir",
+              "from": "tmp4cvok5hxCmpEQ.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -415337,7 +415337,7 @@
             },
             {
               "from": "0_5_synth-lower-variadic.mlir",
-              "to": "tmpm458twmw.synth.mlir",
+              "to": "tmpf3ofc6tg.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415361,7 +415361,7 @@
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmpq45hcih3CmpGE.test.tmp.mlir",
+              "from": "tmpiljaucenCmpGE.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -415392,7 +415392,7 @@
             },
             {
               "from": "0_5_synth-structural-hash.mlir",
-              "to": "tmp4bqycgrh.synth.mlir",
+              "to": "tmp38x0hguo.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415410,13 +415410,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.045,
+          "synth_time_s": 0.05,
           "tv_status": "pass",
           "tv_total": 6,
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmp0w9gtxawRedOr.test.tmp.mlir",
+              "from": "tmp2w6gnjfjRedOr.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -415442,7 +415442,7 @@
             },
             {
               "from": "0_4_synth-lower-variadic.mlir",
-              "to": "tmpazos9whi.synth.mlir",
+              "to": "tmp3ilteeso.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415460,13 +415460,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.142,
+          "synth_time_s": 0.136,
           "tv_status": "pass",
           "tv_total": 17,
           "tv_verified": 17,
           "tv_results": [
             {
-              "from": "tmp8jrkllwhIncDecC.test.tmp.mlir",
+              "from": "tmp7a14lab2IncDecC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -415547,7 +415547,7 @@
             },
             {
               "from": "0_15_synth-structural-hash.mlir",
-              "to": "tmpfydn6t8n.synth.mlir",
+              "to": "tmpiib3yazi.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415565,13 +415565,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.26,
+          "synth_time_s": 0.248,
           "tv_status": "pass",
           "tv_total": 21,
           "tv_verified": 21,
           "tv_results": [
             {
-              "from": "tmpaebwsa3gAddSubV.test.tmp.mlir",
+              "from": "tmp2atzesmcAddSubV.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -415672,7 +415672,7 @@
             },
             {
               "from": "0_19_synth-structural-hash.mlir",
-              "to": "tmpb7h6ikxx.synth.mlir",
+              "to": "tmpcaw16ja8.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415690,13 +415690,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.048,
+          "synth_time_s": 0.047,
           "tv_status": "pass",
           "tv_total": 7,
           "tv_verified": 7,
           "tv_results": [
             {
-              "from": "tmpgj0arc2pFullAdder.test.tmp.mlir",
+              "from": "tmpm7_hin0nFullAdder.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -415727,7 +415727,7 @@
             },
             {
               "from": "0_5_synth-structural-hash.mlir",
-              "to": "tmpmf1h3woi.synth.mlir",
+              "to": "tmptrafzt8y.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415751,7 +415751,7 @@
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmph58a9ifnLeadSignDet.test.tmp.mlir",
+              "from": "tmperakfqvwLeadSignDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -415827,7 +415827,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmp7w6k7cwc.synth.mlir",
+              "to": "tmpc8_7nnpx.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415851,7 +415851,7 @@
           "tv_verified": 12,
           "tv_results": [
             {
-              "from": "tmpk3pgrs_oInc.test.tmp.mlir",
+              "from": "tmp38k5kevkInc.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -415907,7 +415907,7 @@
             },
             {
               "from": "0_10_synth-structural-hash.mlir",
-              "to": "tmpcf5gkc9t.synth.mlir",
+              "to": "tmpqqkh7aln.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -415925,13 +415925,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.121,
+          "synth_time_s": 0.117,
           "tv_status": "pass",
           "tv_total": 16,
           "tv_verified": 16,
           "tv_results": [
             {
-              "from": "tmp9bzlyo7lSumZeroDet.test.tmp.mlir",
+              "from": "tmp6_ohkemnSumZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -416007,7 +416007,7 @@
             },
             {
               "from": "0_14_synth-structural-hash.mlir",
-              "to": "tmpvw4ahs43.synth.mlir",
+              "to": "tmp07pf3m3c.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -416025,13 +416025,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.099,
+          "synth_time_s": 0.1,
           "tv_status": "pass",
           "tv_total": 13,
           "tv_verified": 13,
           "tv_results": [
             {
-              "from": "tmpvy75zmt1Dec.test.tmp.mlir",
+              "from": "tmp9qb5yshsDec.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -416092,7 +416092,7 @@
             },
             {
               "from": "0_11_synth-structural-hash.mlir",
-              "to": "tmp_udu8jla.synth.mlir",
+              "to": "tmpk3r4dq4g.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -416110,13 +416110,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.237,
+          "synth_time_s": 0.223,
           "tv_status": "pass",
           "tv_total": 20,
           "tv_verified": 20,
           "tv_results": [
             {
-              "from": "tmpn1e6xi_5AddSubC.test.tmp.mlir",
+              "from": "tmp762xar9aAddSubC.test.tmp.mlir",
               "to": "0_0_convert-comb-to-datapath.mlir",
               "status": "equiv"
             },
@@ -416212,7 +416212,7 @@
             },
             {
               "from": "0_18_synth-structural-hash.mlir",
-              "to": "tmpc03pec1p.synth.mlir",
+              "to": "tmpnguq40vm.synth.mlir",
               "status": "equiv"
             }
           ]
@@ -416230,13 +416230,13 @@
           "success": true,
           "benchmark_track": "comb",
           "category": "ELAU",
-          "synth_time_s": 0.047,
+          "synth_time_s": 0.048,
           "tv_status": "pass",
           "tv_total": 6,
           "tv_verified": 6,
           "tv_results": [
             {
-              "from": "tmphxp4n00pAllZeroDet.test.tmp.mlir",
+              "from": "tmpv2ypo1c4AllZeroDet.test.tmp.mlir",
               "to": "0_0_convert-comb-to-synth.mlir",
               "status": "equiv"
             },
@@ -416262,7 +416262,7 @@
             },
             {
               "from": "0_4_synth-lower-variadic.mlir",
-              "to": "tmp4tkenbgi.synth.mlir",
+              "to": "tmprdcent_j.synth.mlir",
               "status": "equiv"
             }
           ]
